@@ -35,16 +35,16 @@
     <repository>
       <include>true</include>
       <metadata>
-        <id>jboss-public-plugin-repository</id>
-        <url>http://repository.jboss.org/nexus/content/repositories/public/</url>
+        <id>jboss-datagrid-repository</id>
+        <url>file:///redhat/jboss-data-grid-6.6/jboss-datagrid-6.6.0-maven-repository</url>
         <source>SETTINGS</source>
       </metadata>
     </repository>
     <repository>
       <include>true</include>
       <metadata>
-        <id>jboss-datagrid-repository</id>
-        <url>file:///redhat/jboss-data-grid-6.6/jboss-datagrid-6.6.0-maven-repository</url>
+        <id>jboss-public-plugin-repository</id>
+        <url>http://repository.jboss.org/nexus/content/repositories/public/</url>
         <source>SETTINGS</source>
       </metadata>
     </repository>
@@ -75,17 +75,17 @@
     <repository>
       <include>true</include>
       <metadata>
-        <id>apache-public</id>
-        <url>https://repository.apache.org/content/groups/public/</url>
-        <source>SETTINGS</source>
+        <id>local</id>
+        <url>C:\Users\Giovanni Mezzullo/.m2/repository</url>
+        <source>LOCAL</source>
       </metadata>
     </repository>
     <repository>
       <include>true</include>
       <metadata>
-        <id>local</id>
-        <url>C:\Users\Giovanni Mezzullo/.m2/repository</url>
-        <source>LOCAL</source>
+        <id>apache-public</id>
+        <url>https://repository.apache.org/content/groups/public/</url>
+        <source>SETTINGS</source>
       </metadata>
     </repository>
     <repository>
