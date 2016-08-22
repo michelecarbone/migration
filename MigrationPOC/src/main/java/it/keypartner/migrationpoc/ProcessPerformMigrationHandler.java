@@ -99,8 +99,8 @@ public class ProcessPerformMigrationHandler implements WorkItemHandler {
 			upgradeProcessInstance(extractIfNeeded(current), extractIfNeeded(tobe),
 					Long.valueOf(in_fromProcessInstaceId), in_toProcessId, null);
 
-			log.info("Migration From ProcessInstance [" + in_fromProcessInstaceId + "] To ProcessID [" + in_toProcessId
-					+ "]");
+			log.info("Migration From ProcessInstance -> [" + in_fromProcessInstaceId + "] To ProcessID ["
+					+ in_toProcessId + "]");
 
 			current.dispose();
 
