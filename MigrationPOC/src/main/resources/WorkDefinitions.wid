@@ -56,6 +56,18 @@ import org.drools.core.process.core.datatype.impl.type.ObjectDataType;
     ],
     "displayName" : "REST",
     "icon" : "defaultservicenodeicon.png"
+  ],
+  [
+    "name" : "PerformMigration",
+    "parameters" : [
+      "in_fromProcessInstaceId" : new StringDataType(),
+      "in_toProcessId" : new StringDataType()
+    ],
+    "results" : [
+        "out_outcome" : new StringDataType(),
+    ],
+    "displayName" : "PerformMigration",
+    "icon" : "defaultservicenodeicon.png"
   ]
 
 ]
