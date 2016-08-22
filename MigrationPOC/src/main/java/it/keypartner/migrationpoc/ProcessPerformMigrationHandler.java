@@ -11,7 +11,6 @@ public class ProcessPerformMigrationHandler implements WorkItemHandler {
 
 	@Override
 	public void abortWorkItem(WorkItem workItem, WorkItemManager manager) {
-		System.out.println("ProcessPerformMigrationHandler INIT");
 		String in_fromProcessInstaceId = (String) workItem.getParameter("in_fromProcessInstaceId");
 		String in_toProcessId = (String) workItem.getParameter("in_toProcessId");
 
@@ -19,7 +18,6 @@ public class ProcessPerformMigrationHandler implements WorkItemHandler {
 
 		Map<String, Object> results = new HashMap<String, Object>();
 		results.put("out_outcome", outcome);
-		System.out.println("ProcessPerformMigrationHandler OKKKKKKK");
 		manager.completeWorkItem(workItem.getId(), results);
 
 	}
