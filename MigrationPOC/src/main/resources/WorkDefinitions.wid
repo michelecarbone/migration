@@ -60,6 +60,8 @@ import org.drools.core.process.core.datatype.impl.type.ObjectDataType;
   [
     "name" : "PerformMigration",
     "parameters" : [
+      "in_fromDepoymentId" : new StringDataType(),
+      "in_toDepoymentId" : new StringDataType(),
       "in_fromProcessInstaceId" : new StringDataType(),
       "in_toProcessId" : new StringDataType()
     ],
