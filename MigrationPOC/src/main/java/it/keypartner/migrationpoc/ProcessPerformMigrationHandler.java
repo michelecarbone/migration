@@ -95,8 +95,9 @@ public class ProcessPerformMigrationHandler implements WorkItemHandler {
 
 			KieSession tobe = currentManager.getRuntimeEngine(EmptyContext.get()).getKieSession();
 
-			WorkflowProcessInstanceUpgrader.upgradeProcessInstance(tobe, Long.parseLong(in_fromProcessInstaceId),
-					in_toProcessId, null);
+			log.info("MIGRO...");
+			WorkflowProcessInstanceUpgrader.upgradeProcessInstance(extractIfNeeded(tobe),
+					Long.parseLong(in_fromProcessInstaceId), in_toProcessId, null);
 
 			// upgradeProcessInstance(extractIfNeeded(current),
 			// extractIfNeeded(tobe),
@@ -107,7 +108,7 @@ public class ProcessPerformMigrationHandler implements WorkItemHandler {
 
 			// current.dispose();
 
-			tobe.dispose();
+			// tobe.dispose();
 
 			outcomeBuffer.append("Migration  of process instance (" + in_fromProcessInstaceId
 					+ ") completed successfully to process " + in_toProcessId);
