@@ -107,7 +107,7 @@ public class ProcessPerformMigrationHandler implements WorkItemHandler {
 
 			tobe.dispose();
 
-			outcomeBuffer.append("Migration of process instance (" + in_fromProcessInstaceId
+			outcomeBuffer.append("Migration  of process instance (" + in_fromProcessInstaceId
 					+ ") completed successfully to process " + in_toProcessId);
 
 		} catch (Exception e) {
