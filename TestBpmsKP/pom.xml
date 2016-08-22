@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>it.keypartner</groupId>
   <artifactId>TestBpmsKP</artifactId>
-  <version>3.2</version>
+  <version>3.3</version>
   <packaging>kjar</packaging>
   <name>TestBpmsKP</name>
   <description>First Demo Project Key Partner (Giovanni M.)</description>
