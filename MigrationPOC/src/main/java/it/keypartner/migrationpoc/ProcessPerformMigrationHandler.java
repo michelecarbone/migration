@@ -45,8 +45,8 @@ public class ProcessPerformMigrationHandler implements WorkItemHandler {
 		String in_fromProcessInstaceId = (String) workItem.getParameter("in_fromProcessInstaceId");
 		String in_toProcessId = (String) workItem.getParameter("in_toProcessId");
 
-		log.info("Validate ?? "
-				+ validate(in_fromDepoymentId, in_toDepoymentId, in_fromProcessInstaceId, in_toProcessId));
+		// log.info("Validate ?? "+ validate(in_fromDepoymentId,
+		// in_toDepoymentId, in_fromProcessInstaceId, in_toProcessId));
 		String outcome = migrate(in_fromDepoymentId, in_toDepoymentId, in_fromProcessInstaceId, in_toProcessId);
 
 		Map<String, Object> results = new HashMap<String, Object>();
