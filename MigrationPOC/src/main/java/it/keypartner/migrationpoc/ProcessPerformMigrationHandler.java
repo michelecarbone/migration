@@ -11,6 +11,7 @@ public class ProcessPerformMigrationHandler implements WorkItemHandler {
 
 	@Override
 	public void abortWorkItem(WorkItem workItem, WorkItemManager manager) {
+		System.out.println("ProcessPerformMigrationHandler INIT");
 		String in_fromProcessInstaceId = (String) workItem.getParameter("in_fromProcessInstaceId");
 		String in_toProcessId = (String) workItem.getParameter("in_toProcessId");
 
