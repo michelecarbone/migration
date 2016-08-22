@@ -26,9 +26,9 @@ import org.kie.api.runtime.process.ProcessInstance;
 import org.kie.api.runtime.process.WorkItem;
 import org.kie.api.runtime.process.WorkItemHandler;
 import org.kie.api.runtime.process.WorkItemManager;
-import org.kie.internal.persistence.jpa.JPAKnowledgeService;
 import org.kie.internal.runtime.manager.InternalRuntimeManager;
 import org.kie.internal.runtime.manager.RuntimeManagerRegistry;
+import org.kie.internal.runtime.manager.context.EmptyContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -83,15 +83,17 @@ public class ProcessPerformMigrationHandler implements WorkItemHandler {
 			org.kie.api.definition.process.Process toBeProcess = toBeManager.getEnvironment().getKieBase()
 					.getProcess(in_toProcessId);
 
-			KieSession current = JPAKnowledgeService.newStatefulKnowledgeSession(currentManager.getEnvironment()
-					.getKieBase(), null, currentManager.getEnvironment().getEnvironment());
+			// KieSession current =
+			// JPAKnowledgeService.newStatefulKnowledgeSession(currentManager.getEnvironment()
+			// .getKieBase(), null,
+			// currentManager.getEnvironment().getEnvironment());
+			//
+			// KieSession tobe =
+			// JPAKnowledgeService.newStatefulKnowledgeSession(
+			// toBeManager.getEnvironment().getKieBase(), null,
+			// toBeManager.getEnvironment().getEnvironment());
 
-			String auditPu = toBeManager.getDeploymentDescriptor().getAuditPersistenceUnit();
-
-			EntityManagerFactory emf = EntityManagerFactoryManager.get().getOrCreate(auditPu);
-
-			KieSession tobe = JPAKnowledgeService.newStatefulKnowledgeSession(
-					toBeManager.getEnvironment().getKieBase(), null, toBeManager.getEnvironment().getEnvironment());
+			KieSession tobe = currentManager.getRuntimeEngine(EmptyContext.get()).getKieSession();
 
 			WorkflowProcessInstanceUpgrader.upgradeProcessInstance(tobe, Long.parseLong(in_fromProcessInstaceId),
 					in_toProcessId, null);
