@@ -77,6 +77,10 @@ public class ProcessPerformMigrationHandler implements WorkItemHandler {
 			KieSession current = JPAKnowledgeService.newStatefulKnowledgeSession(currentManager.getEnvironment()
 					.getKieBase(), null, currentManager.getEnvironment().getEnvironment());
 
+			String auditPu = toBeManager.getDeploymentDescriptor().getAuditPersistenceUnit();
+
+			EntityManagerFactory emf = EntityManagerFactoryManager.get().getOrCreate(auditPu);
+
 			KieSession tobe = JPAKnowledgeService.newStatefulKnowledgeSession(
 					toBeManager.getEnvironment().getKieBase(), null, toBeManager.getEnvironment().getEnvironment());
 
@@ -85,8 +89,12 @@ public class ProcessPerformMigrationHandler implements WorkItemHandler {
 
 			log.info("Migration From ProcessInstance [" + in_fromProcessInstaceId + "] To ProcessID [" + in_toProcessId
 					+ "]");
+
+			emf.close();
 			current.destroy();
 			tobe.destroy();
+			outcomeBuffer.append("Migration of process instance (" + in_fromProcessInstaceId
+					+ ") completed successfully to process " + in_toProcessId);
 
 		} catch (Exception e) {
 			outcomeBuffer.append("Migration of process instance (" + in_fromProcessInstaceId + ") failed due to "
