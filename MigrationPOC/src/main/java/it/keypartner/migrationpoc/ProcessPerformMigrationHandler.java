@@ -102,8 +102,8 @@ public class ProcessPerformMigrationHandler implements WorkItemHandler {
 			log.info("Migration From ProcessInstance [" + in_fromProcessInstaceId + "] To ProcessID [" + in_toProcessId
 					+ "]");
 
-			current.destroy();
-			tobe.destroy();
+			current.dispose();
+			tobe.dispose();
 			outcomeBuffer.append("Migration of process instance (" + in_fromProcessInstaceId
 					+ ") completed successfully to process " + in_toProcessId);
 
