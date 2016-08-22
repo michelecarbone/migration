@@ -26,9 +26,9 @@ import org.kie.api.runtime.process.ProcessInstance;
 import org.kie.api.runtime.process.WorkItem;
 import org.kie.api.runtime.process.WorkItemHandler;
 import org.kie.api.runtime.process.WorkItemManager;
+import org.kie.internal.persistence.jpa.JPAKnowledgeService;
 import org.kie.internal.runtime.manager.InternalRuntimeManager;
 import org.kie.internal.runtime.manager.RuntimeManagerRegistry;
-import org.kie.internal.runtime.manager.context.EmptyContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -88,12 +88,11 @@ public class ProcessPerformMigrationHandler implements WorkItemHandler {
 			// .getKieBase(), null,
 			// currentManager.getEnvironment().getEnvironment());
 			//
-			// KieSession tobe =
-			// JPAKnowledgeService.newStatefulKnowledgeSession(
-			// toBeManager.getEnvironment().getKieBase(), null,
-			// toBeManager.getEnvironment().getEnvironment());
+			KieSession tobe = JPAKnowledgeService.newStatefulKnowledgeSession(
+					toBeManager.getEnvironment().getKieBase(), null, toBeManager.getEnvironment().getEnvironment());
 
-			KieSession tobe = currentManager.getRuntimeEngine(EmptyContext.get()).getKieSession();
+			// KieSession tobe =
+			// currentManager.getRuntimeEngine(EmptyContext.get()).getKieSession();
 
 			log.info("MIGRO...");
 			WorkflowProcessInstanceUpgrader.upgradeProcessInstance(extractIfNeeded(tobe),
