@@ -11,17 +11,9 @@
     <repository>
       <include>true</include>
       <metadata>
-        <id>jboss-datagrid-repository</id>
-        <url>file:///redhat/jboss-data-grid-6.6/jboss-datagrid-6.6.0-maven-repository</url>
-        <source>SETTINGS</source>
-      </metadata>
-    </repository>
-    <repository>
-      <include>true</include>
-      <metadata>
-        <id>fusesource</id>
-        <url>http://repo.fusesource.com/nexus/content/groups/public/</url>
-        <source>SETTINGS</source>
+        <id>central</id>
+        <url>https://repo.maven.apache.org/maven2</url>
+        <source>PROJECT</source>
       </metadata>
     </repository>
     <repository>
@@ -29,6 +21,14 @@
       <metadata>
         <id>fusesource.snapshot</id>
         <url>http://repo.fusesource.com/nexus/content/groups/public-snapshots/</url>
+        <source>SETTINGS</source>
+      </metadata>
+    </repository>
+    <repository>
+      <include>true</include>
+      <metadata>
+        <id>jboss-public-plugin-repository</id>
+        <url>http://repository.jboss.org/nexus/content/repositories/public/</url>
         <source>SETTINGS</source>
       </metadata>
     </repository>
@@ -51,24 +51,8 @@
     <repository>
       <include>true</include>
       <metadata>
-        <id>jboss-public-repository</id>
-        <url>http://repository.jboss.org/nexus/content/repositories/public/</url>
-        <source>SETTINGS</source>
-      </metadata>
-    </repository>
-    <repository>
-      <include>true</include>
-      <metadata>
-        <id>jboss-ga-repository</id>
-        <url>http://maven.repository.redhat.com/techpreview/all</url>
-        <source>SETTINGS</source>
-      </metadata>
-    </repository>
-    <repository>
-      <include>true</include>
-      <metadata>
-        <id>jboss-public-plugin-repository</id>
-        <url>http://repository.jboss.org/nexus/content/repositories/public/</url>
+        <id>fusesource</id>
+        <url>http://repo.fusesource.com/nexus/content/groups/public/</url>
         <source>SETTINGS</source>
       </metadata>
     </repository>
@@ -83,9 +67,9 @@
     <repository>
       <include>true</include>
       <metadata>
-        <id>central</id>
-        <url>https://repo.maven.apache.org/maven2</url>
-        <source>PROJECT</source>
+        <id>jboss-datagrid-repository</id>
+        <url>file:///redhat/jboss-data-grid-6.6/jboss-datagrid-6.6.0-maven-repository</url>
+        <source>SETTINGS</source>
       </metadata>
     </repository>
     <repository>
@@ -93,6 +77,22 @@
       <metadata>
         <id>jboss-datagrid-repository</id>
         <url>file:///work/jboss-datagrid-6.6.0-maven-repository</url>
+        <source>SETTINGS</source>
+      </metadata>
+    </repository>
+    <repository>
+      <include>true</include>
+      <metadata>
+        <id>jboss-public-repository</id>
+        <url>http://repository.jboss.org/nexus/content/repositories/public/</url>
+        <source>SETTINGS</source>
+      </metadata>
+    </repository>
+    <repository>
+      <include>true</include>
+      <metadata>
+        <id>jboss-ga-repository</id>
+        <url>http://maven.repository.redhat.com/techpreview/all</url>
         <source>SETTINGS</source>
       </metadata>
     </repository>
