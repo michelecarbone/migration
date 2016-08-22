@@ -3,6 +3,14 @@
     <repository>
       <include>true</include>
       <metadata>
+        <id>apache-public</id>
+        <url>https://repository.apache.org/content/groups/public/</url>
+        <source>SETTINGS</source>
+      </metadata>
+    </repository>
+    <repository>
+      <include>true</include>
+      <metadata>
         <id>local</id>
         <url>C:\Users\Giovanni Mezzullo/.m2/repository</url>
         <source>LOCAL</source>
@@ -11,16 +19,32 @@
     <repository>
       <include>true</include>
       <metadata>
-        <id>fusesource</id>
-        <url>http://repo.fusesource.com/nexus/content/groups/public/</url>
+        <id>jboss-ga-plugin-repository</id>
+        <url>http://maven.repository.redhat.com/techpreview/all</url>
         <source>SETTINGS</source>
       </metadata>
     </repository>
     <repository>
       <include>true</include>
       <metadata>
-        <id>jboss-datagrid-repository</id>
-        <url>file:///redhat/jboss-data-grid-6.6/jboss-datagrid-6.6.0-maven-repository</url>
+        <id>fusesource.snapshot</id>
+        <url>http://repo.fusesource.com/nexus/content/groups/public-snapshots/</url>
+        <source>SETTINGS</source>
+      </metadata>
+    </repository>
+    <repository>
+      <include>true</include>
+      <metadata>
+        <id>jboss-public-repository</id>
+        <url>http://repository.jboss.org/nexus/content/repositories/public/</url>
+        <source>SETTINGS</source>
+      </metadata>
+    </repository>
+    <repository>
+      <include>true</include>
+      <metadata>
+        <id>jboss-public-plugin-repository</id>
+        <url>http://repository.jboss.org/nexus/content/repositories/public/</url>
         <source>SETTINGS</source>
       </metadata>
     </repository>
@@ -43,6 +67,14 @@
     <repository>
       <include>true</include>
       <metadata>
+        <id>fusesource</id>
+        <url>http://repo.fusesource.com/nexus/content/groups/public/</url>
+        <source>SETTINGS</source>
+      </metadata>
+    </repository>
+    <repository>
+      <include>true</include>
+      <metadata>
         <id>jboss-ga-repository</id>
         <url>http://maven.repository.redhat.com/techpreview/all</url>
         <source>SETTINGS</source>
@@ -51,8 +83,8 @@
     <repository>
       <include>true</include>
       <metadata>
-        <id>fusesource.snapshot</id>
-        <url>http://repo.fusesource.com/nexus/content/groups/public-snapshots/</url>
+        <id>jboss-datagrid-repository</id>
+        <url>file:///redhat/jboss-data-grid-6.6/jboss-datagrid-6.6.0-maven-repository</url>
         <source>SETTINGS</source>
       </metadata>
     </repository>
@@ -61,38 +93,6 @@
       <metadata>
         <id>jboss-datagrid-repository</id>
         <url>file:///work/jboss-datagrid-6.6.0-maven-repository</url>
-        <source>SETTINGS</source>
-      </metadata>
-    </repository>
-    <repository>
-      <include>true</include>
-      <metadata>
-        <id>jboss-public-repository</id>
-        <url>http://repository.jboss.org/nexus/content/repositories/public/</url>
-        <source>SETTINGS</source>
-      </metadata>
-    </repository>
-    <repository>
-      <include>true</include>
-      <metadata>
-        <id>apache-public</id>
-        <url>https://repository.apache.org/content/groups/public/</url>
-        <source>SETTINGS</source>
-      </metadata>
-    </repository>
-    <repository>
-      <include>true</include>
-      <metadata>
-        <id>jboss-public-plugin-repository</id>
-        <url>http://repository.jboss.org/nexus/content/repositories/public/</url>
-        <source>SETTINGS</source>
-      </metadata>
-    </repository>
-    <repository>
-      <include>true</include>
-      <metadata>
-        <id>jboss-ga-plugin-repository</id>
-        <url>http://maven.repository.redhat.com/techpreview/all</url>
         <source>SETTINGS</source>
       </metadata>
     </repository>
