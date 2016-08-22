@@ -51,16 +51,16 @@
     <repository>
       <include>true</include>
       <metadata>
-        <id>jboss-datagrid-repository</id>
-        <url>file:///work/jboss-datagrid-6.6.0-maven-repository</url>
+        <id>fusesource.snapshot</id>
+        <url>http://repo.fusesource.com/nexus/content/groups/public-snapshots/</url>
         <source>SETTINGS</source>
       </metadata>
     </repository>
     <repository>
       <include>true</include>
       <metadata>
-        <id>fusesource.snapshot</id>
-        <url>http://repo.fusesource.com/nexus/content/groups/public-snapshots/</url>
+        <id>jboss-datagrid-repository</id>
+        <url>file:///work/jboss-datagrid-6.6.0-maven-repository</url>
         <source>SETTINGS</source>
       </metadata>
     </repository>
