@@ -1,16 +1,16 @@
 
-<form id="1328971774">
+<form id="1192269176">
 <property name="name" value="HRResourceTask-taskform.form"/>
 <property name="displayMode" value="default"/>
 <property name="status" value="0"/>
-<field position="0" name="eta" type="InputTextInteger" id="2057895901">
+<field position="0" name="eta" type="InputTextInteger" id="1050340344">
 <property name="fieldRequired" value="false"/>
 <property name="label" value="quot;enquot;,quot;EtaIns (eta)quot;"/>
 <property name="readonly" value="false"/>
 <property name="inputBinding" value="EtaIns"/>
 <property name="fieldClass" value="java.lang.Integer"/>
 </field>
-<field position="1" name="nome" type="InputText" id="1268327019">
+<field position="1" name="nome" type="InputText" id="1484330069">
 <property name="fieldRequired" value="false"/>
 <property name="label" value="quot;enquot;,quot;NameIns (nome)quot;"/>
 <property name="readonly" value="false"/>
