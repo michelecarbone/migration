@@ -14,6 +14,7 @@ import org.jbpm.runtime.manager.impl.jpa.EntityManagerFactoryManager;
 import org.jbpm.workflow.core.NodeContainer;
 import org.jbpm.workflow.core.impl.NodeImpl;
 import org.jbpm.workflow.instance.NodeInstanceContainer;
+import org.jbpm.workflow.instance.WorkflowProcessInstanceUpgrader;
 import org.jbpm.workflow.instance.impl.NodeInstanceImpl;
 import org.jbpm.workflow.instance.impl.WorkflowProcessInstanceImpl;
 import org.kie.api.definition.process.Node;
@@ -92,17 +93,17 @@ public class ProcessPerformMigrationHandler implements WorkItemHandler {
 			KieSession tobe = JPAKnowledgeService.newStatefulKnowledgeSession(
 					toBeManager.getEnvironment().getKieBase(), null, toBeManager.getEnvironment().getEnvironment());
 
-			// WorkflowProcessInstanceUpgrader.upgradeProcessInstance(tobe,
-			// Long.parseLong(in_fromProcessInstaceId),
-			// in_toProcessId, null);
+			WorkflowProcessInstanceUpgrader.upgradeProcessInstance(tobe, Long.parseLong(in_fromProcessInstaceId),
+					in_toProcessId, null);
 
-			upgradeProcessInstance(extractIfNeeded(current), extractIfNeeded(tobe),
-					Long.valueOf(in_fromProcessInstaceId), in_toProcessId, null);
+			// upgradeProcessInstance(extractIfNeeded(current),
+			// extractIfNeeded(tobe),
+			// Long.valueOf(in_fromProcessInstaceId), in_toProcessId, null);
 
 			log.info("Migration From ProcessInstance -> [" + in_fromProcessInstaceId + "] To ProcessID ["
 					+ in_toProcessId + "]");
 
-			current.dispose();
+			// current.dispose();
 
 			tobe.dispose();
 
