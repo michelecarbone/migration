@@ -3,25 +3,11 @@
 <property name="name" value="MigrationPOC.migrationBP-taskform.form"/>
 <property name="displayMode" value="default"/>
 <property name="status" value="0"/>
-<field position="4" name="out_outcome" type="InputText" id="1955246417">
-<property name="fieldRequired" value="false"/>
-<property name="label" value="quot;enquot;,quot;out_outcome (out_outcome)quot;"/>
-<property name="readonly" value="false"/>
-<property name="outputBinding" value="out_outcome"/>
-<property name="fieldClass" value="java.lang.String"/>
-</field>
 <field position="0" name="in_fromDepoymentId" type="InputText" id="1375165042">
 <property name="fieldRequired" value="false"/>
 <property name="label" value="quot;enquot;,quot;in_fromDepoymentId (in_fromDepoymentId)quot;"/>
 <property name="readonly" value="false"/>
 <property name="outputBinding" value="in_fromDepoymentId"/>
-<property name="fieldClass" value="java.lang.String"/>
-</field>
-<field position="3" name="in_toProcessId" type="InputText" id="1634356219">
-<property name="fieldRequired" value="false"/>
-<property name="label" value="quot;enquot;,quot;in_toProcessId (in_toProcessId)quot;"/>
-<property name="readonly" value="false"/>
-<property name="outputBinding" value="in_toProcessId"/>
 <property name="fieldClass" value="java.lang.String"/>
 </field>
 <field position="1" name="in_fromProcessInstaceId" type="InputText" id="2061765685">
@@ -36,6 +22,13 @@
 <property name="label" value="quot;enquot;,quot;in_toDepoymentId (in_toDepoymentId)quot;"/>
 <property name="readonly" value="false"/>
 <property name="outputBinding" value="in_toDepoymentId"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<field position="3" name="in_toProcessId" type="InputText" id="1634356219">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;in_toProcessId (in_toProcessId)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="in_toProcessId"/>
 <property name="fieldClass" value="java.lang.String"/>
 </field>
 <dataHolder inputId="" name="#B29FE4" type="basicType" outId="in_fromDepoymentId" value="java.lang.String" id="in_fromDepoymentId"/>
