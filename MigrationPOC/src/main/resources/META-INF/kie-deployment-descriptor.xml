@@ -26,7 +26,7 @@
             <resolver>mvel</resolver>
             <identifier>new it.keypartner.migrationpoc.ProcessPerformMigrationHandler()</identifier>
             <parameters/>
-            <name>PerformMigration</name>
+            <name>PerformMigrationTask</name>
         </work-item-handler>
         <work-item-handler>
             <resolver>mvel</resolver>
