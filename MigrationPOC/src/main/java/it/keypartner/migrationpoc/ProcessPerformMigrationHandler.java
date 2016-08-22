@@ -3,11 +3,17 @@ package it.keypartner.migrationpoc;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.persistence.EntityManagerFactory;
+
 import org.drools.core.command.impl.CommandBasedStatefulKnowledgeSession;
 import org.drools.core.command.impl.KnowledgeCommandContext;
+import org.jbpm.process.audit.JPAAuditLogService;
+import org.jbpm.process.audit.ProcessInstanceLog;
+import org.jbpm.runtime.manager.impl.jpa.EntityManagerFactoryManager;
 import org.jbpm.workflow.instance.WorkflowProcessInstanceUpgrader;
 import org.kie.api.runtime.KieRuntime;
 import org.kie.api.runtime.KieSession;
+import org.kie.api.runtime.process.ProcessInstance;
 import org.kie.api.runtime.process.WorkItem;
 import org.kie.api.runtime.process.WorkItemHandler;
 import org.kie.api.runtime.process.WorkItemManager;
@@ -30,6 +36,8 @@ public class ProcessPerformMigrationHandler implements WorkItemHandler {
 		String in_fromProcessInstaceId = (String) workItem.getParameter("in_fromProcessInstaceId");
 		String in_toProcessId = (String) workItem.getParameter("in_toProcessId");
 
+		log.info("Validate ?? "
+				+ validate(in_fromDepoymentId, in_toDepoymentId, in_fromProcessInstaceId, in_toProcessId));
 		String outcome = migrate(in_fromDepoymentId, in_toDepoymentId, in_fromProcessInstaceId, in_toProcessId);
 
 		Map<String, Object> results = new HashMap<String, Object>();
@@ -87,7 +95,7 @@ public class ProcessPerformMigrationHandler implements WorkItemHandler {
 		return outcomeBuffer.toString();
 	}
 
-	private static KieRuntime extractIfNeeded(KieSession ksession) {
+	private KieRuntime extractIfNeeded(KieSession ksession) {
 		if (ksession instanceof CommandBasedStatefulKnowledgeSession) {
 			return ((KnowledgeCommandContext) ((CommandBasedStatefulKnowledgeSession) ksession).getCommandService()
 					.getContext()).getKieSession();
@@ -96,4 +104,41 @@ public class ProcessPerformMigrationHandler implements WorkItemHandler {
 		return ksession;
 	}
 
+	public boolean validate(String in_fromDepoymentId, String in_toDepoymentId, String in_fromProcessInstaceId,
+			String in_toProcessId) {
+
+		if (!RuntimeManagerRegistry.get().isRegistered(in_fromDepoymentId)) {
+
+			return false;
+		}
+
+		if (!RuntimeManagerRegistry.get().isRegistered(in_toDepoymentId)) {
+
+			return false;
+		}
+
+		InternalRuntimeManager manager = (InternalRuntimeManager) RuntimeManagerRegistry.get().getManager(
+				in_toDepoymentId);
+		if (manager.getEnvironment().getKieBase().getProcess(in_toProcessId) == null) {
+			log.error("No process found for {} in deployment {}", in_toProcessId, in_toDepoymentId);
+
+			return false;
+		}
+
+		String auditPu = manager.getDeploymentDescriptor().getAuditPersistenceUnit();
+
+		EntityManagerFactory emf = EntityManagerFactoryManager.get().getOrCreate(auditPu);
+
+		JPAAuditLogService auditService = new JPAAuditLogService(emf);
+		ProcessInstanceLog procLog = auditService.findProcessInstance(Long.valueOf(in_fromProcessInstaceId));
+		if (procLog == null || procLog.getStatus() != ProcessInstance.STATE_ACTIVE) {
+			log.error("No process instance found or it is not active (id {} in status {}",
+					Long.valueOf(in_fromProcessInstaceId), (procLog == null ? "-1" : procLog.getStatus()));
+
+			return false;
+		}
+		auditService.dispose();
+
+		return true;
+	}
 }
