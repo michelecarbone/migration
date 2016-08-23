@@ -3,6 +3,7 @@ package it.keypartner.migrationpoc;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManagerFactory;
 
@@ -34,6 +35,7 @@ import org.kie.internal.runtime.manager.RuntimeManagerRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@ApplicationScoped
 public class ProcessPerformMigrationHandler implements WorkItemHandler {
 
 	private static final Logger log = LoggerFactory.getLogger(ProcessPerformMigrationHandler.class);
