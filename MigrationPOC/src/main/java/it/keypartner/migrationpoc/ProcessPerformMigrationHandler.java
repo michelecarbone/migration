@@ -3,6 +3,7 @@ package it.keypartner.migrationpoc;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.inject.Inject;
 import javax.persistence.EntityManagerFactory;
 
 import org.drools.core.command.impl.CommandBasedStatefulKnowledgeSession;
@@ -11,6 +12,7 @@ import org.drools.core.common.InternalKnowledgeRuntime;
 import org.jbpm.process.audit.JPAAuditLogService;
 import org.jbpm.process.audit.ProcessInstanceLog;
 import org.jbpm.runtime.manager.impl.jpa.EntityManagerFactoryManager;
+import org.jbpm.services.api.RuntimeDataService;
 import org.jbpm.workflow.core.NodeContainer;
 import org.jbpm.workflow.core.impl.NodeImpl;
 import org.jbpm.workflow.instance.NodeInstanceContainer;
@@ -36,10 +38,16 @@ public class ProcessPerformMigrationHandler implements WorkItemHandler {
 
 	private static final Logger log = LoggerFactory.getLogger(ProcessPerformMigrationHandler.class);
 
+	@Inject
+	RuntimeDataService runtimeDataService;
+
 	@Override
 	public void executeWorkItem(WorkItem workItem, WorkItemManager manager) {
+		log.info("ProcessPerformMigrationHandler ..... CDI??");
 
+		System.out.println(runtimeDataService);
 		log.info("ProcessPerformMigrationHandler .. IN Action");
+
 		String in_fromDepoymentId = (String) workItem.getParameter("in_fromDepoymentId");
 		String in_toDepoymentId = (String) workItem.getParameter("in_toDepoymentId");
 		String in_fromProcessInstaceId = (String) workItem.getParameter("in_fromProcessInstaceId");
