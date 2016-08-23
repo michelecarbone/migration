@@ -237,6 +237,7 @@ public class ProcessPerformMigrationHandler implements WorkItemHandler {
 					Long.valueOf(in_fromProcessInstaceId), (procLog == null ? "-1" : procLog.getStatus()));
 
 			return false;
+
 		}
 		auditService.dispose();
 
