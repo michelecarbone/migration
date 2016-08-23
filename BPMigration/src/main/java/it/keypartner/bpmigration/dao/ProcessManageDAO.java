@@ -28,6 +28,7 @@ public class ProcessManageDAO {
 			String auditPu = manager.getDeploymentDescriptor().getAuditPersistenceUnit();
 			EntityManagerFactory emf = EntityManagerFactoryManager.get().getOrCreate(auditPu);
 			JPAAuditLogService auditService = new JPAAuditLogService(emf);
+			// TODO ATTENZIONE RITORNA TUTTI I PROCESS ATTIVI SENZA DISTINZIONE
 			instanceLogList = auditService.findActiveProcessInstances();
 			log.info("retriveActiveProcessInstance N." + instanceLogList.size()
 					+ " Active Process Instance for DEP-ID [" + deploymentID + "]...");
@@ -48,5 +49,4 @@ public class ProcessManageDAO {
 		}
 
 	}
-
 }
