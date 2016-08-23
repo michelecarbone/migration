@@ -56,6 +56,17 @@ import org.drools.core.process.core.datatype.impl.type.ObjectDataType;
     ],
     "displayName" : "REST",
     "icon" : "defaultservicenodeicon.png"
+  ],
+    [
+    "name" : "SearchAllInstance",
+    "parameters" : [
+      "in_search" : new ObjectDataType()
+    ],
+    "results" : [
+        "out_processList" : new ObjectDataType(),
+    ],
+    "displayName" : "SearchAllInstance",
+    "icon" : "defaultservicenodeicon.png"
   ]
 
 ]
