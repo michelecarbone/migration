@@ -14,7 +14,6 @@ public class SearchAllProcessInstanceHandler implements WorkItemHandler {
 
 	@Override
 	public void abortWorkItem(WorkItem arg0, WorkItemManager arg1) {
-		// TODO Auto-generated method stub
 
 	}
 
