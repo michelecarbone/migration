@@ -1,6 +1,7 @@
 package it.keypartner.migrationpoc;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -254,4 +255,20 @@ public class ProcessPerformMigrationHandler implements WorkItemHandler {
 		return true;
 	}
 
+	private void findAllProcess() {
+		InternalRuntimeManager manager = (InternalRuntimeManager) RuntimeManagerRegistry.get();
+
+		String auditPu = manager.getDeploymentDescriptor().getAuditPersistenceUnit();
+
+		EntityManagerFactory emf = EntityManagerFactoryManager.get().getOrCreate(auditPu);
+
+		JPAAuditLogService auditService = new JPAAuditLogService(emf);
+		List<ProcessInstanceLog> listProcInstance = auditService.findProcessInstances();
+		log.info("Found " + listProcInstance.size());
+		for (ProcessInstanceLog logProc : listProcInstance) {
+			log.info(logProc.toString());
+		}
+
+		auditService.dispose();
+	}
 }
