@@ -5,94 +5,85 @@ package it.keypartner.bpmigration;
  */
 
 @org.kie.api.definition.type.Description("Parameters to search process instance")
-public class SearchProcessInstance implements java.io.Serializable
-{
+public class SearchProcessInstance implements java.io.Serializable {
 
-   static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-   private java.lang.String processInstanceId;
-   private java.lang.String toProcessId;
-   private java.lang.String fromDeploymentId;
-   private java.lang.String toDeploymentId;
-   private java.lang.String searchProcessVarName;
-   private java.lang.String searchProcessVarValue;
+	private java.lang.String processInstanceId;
+	private java.lang.String toProcessId;
+	private java.lang.String fromDeploymentId;
+	private java.lang.String toDeploymentId;
+	private java.lang.String searchProcessVarName;
+	private java.lang.String searchProcessVarValue;
 
-   public SearchProcessInstance()
-   {
-   }
+	public SearchProcessInstance() {
+	}
 
-   public java.lang.String getProcessInstanceId()
-   {
-      return this.processInstanceId;
-   }
+	public java.lang.String getProcessInstanceId() {
+		return this.processInstanceId;
+	}
 
-   public void setProcessInstanceId(java.lang.String processInstanceId)
-   {
-      this.processInstanceId = processInstanceId;
-   }
+	public void setProcessInstanceId(java.lang.String processInstanceId) {
+		this.processInstanceId = processInstanceId;
+	}
 
-   public java.lang.String getToProcessId()
-   {
-      return this.toProcessId;
-   }
+	public java.lang.String getToProcessId() {
+		return this.toProcessId;
+	}
 
-   public void setToProcessId(java.lang.String toProcessId)
-   {
-      this.toProcessId = toProcessId;
-   }
+	public void setToProcessId(java.lang.String toProcessId) {
+		this.toProcessId = toProcessId;
+	}
 
-   public java.lang.String getFromDeploymentId()
-   {
-      return this.fromDeploymentId;
-   }
+	public java.lang.String getFromDeploymentId() {
+		return this.fromDeploymentId;
+	}
 
-   public void setFromDeploymentId(java.lang.String fromDeploymentId)
-   {
-      this.fromDeploymentId = fromDeploymentId;
-   }
+	public void setFromDeploymentId(java.lang.String fromDeploymentId) {
+		this.fromDeploymentId = fromDeploymentId;
+	}
 
-   public java.lang.String getToDeploymentId()
-   {
-      return this.toDeploymentId;
-   }
+	public java.lang.String getToDeploymentId() {
+		return this.toDeploymentId;
+	}
 
-   public void setToDeploymentId(java.lang.String toDeploymentId)
-   {
-      this.toDeploymentId = toDeploymentId;
-   }
+	public void setToDeploymentId(java.lang.String toDeploymentId) {
+		this.toDeploymentId = toDeploymentId;
+	}
 
-   public java.lang.String getSearchProcessVarName()
-   {
-      return this.searchProcessVarName;
-   }
+	public java.lang.String getSearchProcessVarName() {
+		return this.searchProcessVarName;
+	}
 
-   public void setSearchProcessVarName(java.lang.String searchProcessVarName)
-   {
-      this.searchProcessVarName = searchProcessVarName;
-   }
+	public void setSearchProcessVarName(java.lang.String searchProcessVarName) {
+		this.searchProcessVarName = searchProcessVarName;
+	}
 
-   public java.lang.String getSearchProcessVarValue()
-   {
-      return this.searchProcessVarValue;
-   }
+	public java.lang.String getSearchProcessVarValue() {
+		return this.searchProcessVarValue;
+	}
 
-   public void setSearchProcessVarValue(java.lang.String searchProcessVarValue)
-   {
-      this.searchProcessVarValue = searchProcessVarValue;
-   }
+	public void setSearchProcessVarValue(java.lang.String searchProcessVarValue) {
+		this.searchProcessVarValue = searchProcessVarValue;
+	}
 
-   public SearchProcessInstance(java.lang.String processInstanceId,
-         java.lang.String toProcessId, java.lang.String fromDeploymentId,
-         java.lang.String toDeploymentId,
-         java.lang.String searchProcessVarName,
-         java.lang.String searchProcessVarValue)
-   {
-      this.processInstanceId = processInstanceId;
-      this.toProcessId = toProcessId;
-      this.fromDeploymentId = fromDeploymentId;
-      this.toDeploymentId = toDeploymentId;
-      this.searchProcessVarName = searchProcessVarName;
-      this.searchProcessVarValue = searchProcessVarValue;
-   }
+	public SearchProcessInstance(java.lang.String processInstanceId, java.lang.String toProcessId,
+			java.lang.String fromDeploymentId, java.lang.String toDeploymentId, java.lang.String searchProcessVarName,
+			java.lang.String searchProcessVarValue) {
+		this.processInstanceId = processInstanceId;
+		this.toProcessId = toProcessId;
+		this.fromDeploymentId = fromDeploymentId;
+		this.toDeploymentId = toDeploymentId;
+		this.searchProcessVarName = searchProcessVarName;
+		this.searchProcessVarValue = searchProcessVarValue;
+	}
+
+	@Override
+	public String toString() {
+		return "SearchProcessInstance [processInstanceId=" + processInstanceId + ", toProcessId=" + toProcessId
+				+ ", fromDeploymentId=" + fromDeploymentId + ", toDeploymentId=" + toDeploymentId
+				+ ", searchProcessVarName=" + searchProcessVarName + ", searchProcessVarValue=" + searchProcessVarValue
+				+ "]";
+	}
 
 }
