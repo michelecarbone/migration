@@ -15,9 +15,10 @@ public class AllProcessInstanceHandler implements WorkItemHandler {
 
 	@Override
 	public void executeWorkItem(WorkItem workItem, WorkItemManager wkManager) {
-		log.info("Calling search...");
+		log.info("Calling search ...");
 
 		SearchProcessInstance searchProcessInstance = (SearchProcessInstance) workItem.getParameter("in_search");
+		log.info("Params -> " + searchProcessInstance.toString());
 
 		ProcessManageDAO processManageDAO = new ProcessManageDAO();
 		processManageDAO.retriveActiveProcessInstance(searchProcessInstance.getFromDeploymentId());

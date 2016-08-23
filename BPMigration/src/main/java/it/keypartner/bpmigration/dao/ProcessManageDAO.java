@@ -31,11 +31,22 @@ public class ProcessManageDAO {
 			instanceLogList = auditService.findActiveProcessInstances();
 			log.info("retriveActiveProcessInstance N." + instanceLogList.size()
 					+ " Active Process Instance for DEP-ID [" + deploymentID + "]...");
+			printProcInstanceLog(instanceLogList);
 			auditService.dispose();
 		} catch (Exception exception) {
 			log.error("EXCEPTION IN FIND ACTIVE PROCESS INSTANCE FOR DEPLOYMENTID [" + deploymentID + "]", exception);
 		}
 		return instanceLogList;
+	}
+
+	/*
+	 * UTILITY
+	 */
+	private void printProcInstanceLog(List<ProcessInstanceLog> instanceLogList) {
+		for (ProcessInstanceLog instanceLog : instanceLogList) {
+			log.info(instanceLog.toString());
+		}
+
 	}
 
 }
