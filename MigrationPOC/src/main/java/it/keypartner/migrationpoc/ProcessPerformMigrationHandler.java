@@ -49,6 +49,7 @@ public class ProcessPerformMigrationHandler implements WorkItemHandler {
 		log.info("ProcessPerformMigrationHandler ..... CDI??");
 
 		System.out.println(runtimeDataService);
+		findAllProcess();
 		log.info("ProcessPerformMigrationHandler .. IN Action");
 
 		String in_fromDepoymentId = (String) workItem.getParameter("in_fromDepoymentId");
