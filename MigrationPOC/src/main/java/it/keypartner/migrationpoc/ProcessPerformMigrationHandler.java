@@ -264,7 +264,7 @@ public class ProcessPerformMigrationHandler implements WorkItemHandler {
 		EntityManagerFactory emf = EntityManagerFactoryManager.get().getOrCreate(auditPu);
 
 		JPAAuditLogService auditService = new JPAAuditLogService(emf);
-		List<ProcessInstanceLog> listProcInstance = auditService.findProcessInstances();
+		List<ProcessInstanceLog> listProcInstance = auditService.findActiveProcessInstances();
 		log.info("Found " + listProcInstance.size());
 		for (ProcessInstanceLog logProc : listProcInstance) {
 			log.info(logProc.toString());
