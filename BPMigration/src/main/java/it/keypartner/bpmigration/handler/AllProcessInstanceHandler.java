@@ -12,7 +12,11 @@ public class AllProcessInstanceHandler implements WorkItemHandler {
 
 	@Override
 	public void executeWorkItem(WorkItem workItem, WorkItemManager manager) {
-		// TODO Auto-generated method stub
+		log.info("Calling search...");
+
+		manager.completeWorkItem(workItem.getId(), null);
+
+		log.info("Search end!");
 
 	}
 
