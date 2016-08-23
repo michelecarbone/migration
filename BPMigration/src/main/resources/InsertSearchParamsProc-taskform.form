@@ -3,4 +3,28 @@
 <property name="name" value="InsertSearchParamsProc-taskform.form"/>
 <property name="displayMode" value="default"/>
 <property name="status" value="0"/>
+<field position="0" name="searchProc_fromDeploymentId" type="InputText" id="1315686247">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;fromDeploymentId (searchProc)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="searchProc/fromDeploymentId"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<field position="1" name="searchProc_toDeploymentId" type="InputText" id="1621645408">
+<property name="fieldRequired" value="false"/>
+<property name="groupWithPrevious" value="true"/>
+<property name="label" value="quot;enquot;,quot;toDeploymentId (searchProc)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="searchProc/toDeploymentId"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<field position="2" name="searchProc_toProcessId" type="InputText" id="37776182">
+<property name="fieldRequired" value="false"/>
+<property name="groupWithPrevious" value="true"/>
+<property name="label" value="quot;enquot;,quot;toProcessId (searchProc)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="searchProc/toProcessId"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<dataHolder inputId="" name="#0000A0" type="dataModelerEntry" outId="searchProc" value="it.keypartner.bpmigration.SearchProcessInstance" id="searchProc"/>
 </form>
