@@ -48,14 +48,13 @@ public class ProcessPerformMigrationHandler implements WorkItemHandler {
 	public void executeWorkItem(WorkItem workItem, WorkItemManager manager) {
 		log.info("ProcessPerformMigrationHandler ..... CDI??");
 
-		System.out.println(runtimeDataService);
-		findAllProcess();
-		log.info("ProcessPerformMigrationHandler .. IN Action");
-
 		String in_fromDepoymentId = (String) workItem.getParameter("in_fromDepoymentId");
 		String in_toDepoymentId = (String) workItem.getParameter("in_toDepoymentId");
 		String in_fromProcessInstaceId = (String) workItem.getParameter("in_fromProcessInstaceId");
 		String in_toProcessId = (String) workItem.getParameter("in_toProcessId");
+		System.out.println(runtimeDataService);
+		findAllProcess(in_fromDepoymentId);
+		log.info("ProcessPerformMigrationHandler .. IN Action");
 
 		// log.info("Validate ?? "+ validate(in_fromDepoymentId,
 		// in_toDepoymentId, in_fromProcessInstaceId, in_toProcessId));
@@ -256,8 +255,9 @@ public class ProcessPerformMigrationHandler implements WorkItemHandler {
 		return true;
 	}
 
-	private void findAllProcess() {
-		InternalRuntimeManager manager = (InternalRuntimeManager) RuntimeManagerRegistry.get();
+	private void findAllProcess(String in_fromDepoymentId) {
+		InternalRuntimeManager manager = (InternalRuntimeManager) RuntimeManagerRegistry.get().getManager(
+				in_fromDepoymentId);
 
 		String auditPu = manager.getDeploymentDescriptor().getAuditPersistenceUnit();
 
