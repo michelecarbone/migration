@@ -1,5 +1,8 @@
 package it.keypartner.bpmigration.handler;
 
+import it.keypartner.bpmigration.SearchProcessInstance;
+import it.keypartner.bpmigration.dao.ProcessManageDAO;
+
 import org.kie.api.runtime.process.WorkItem;
 import org.kie.api.runtime.process.WorkItemHandler;
 import org.kie.api.runtime.process.WorkItemManager;
@@ -11,13 +14,15 @@ public class AllProcessInstanceHandler implements WorkItemHandler {
 	private static final Logger log = LoggerFactory.getLogger(AllProcessInstanceHandler.class);
 
 	@Override
-	public void executeWorkItem(WorkItem workItem, WorkItemManager manager) {
+	public void executeWorkItem(WorkItem workItem, WorkItemManager wkManager) {
 		log.info("Calling search...");
 
-		manager.completeWorkItem(workItem.getId(), null);
+		SearchProcessInstance searchProcessInstance = (SearchProcessInstance) workItem.getParameter("in_search");
 
-		log.info("Search end!");
+		ProcessManageDAO processManageDAO = new ProcessManageDAO();
+		processManageDAO.retriveActiveProcessInstance(searchProcessInstance.getFromDeploymentId());
 
+		wkManager.completeWorkItem(workItem.getId(), null);
 	}
 
 	@Override
