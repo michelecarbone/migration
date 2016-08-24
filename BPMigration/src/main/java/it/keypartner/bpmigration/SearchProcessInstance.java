@@ -11,6 +11,7 @@ public class SearchProcessInstance implements java.io.Serializable {
 
 	private java.lang.String processInstanceId;
 	private java.lang.String toProcessId;
+	private java.lang.String fromProcessId;
 	private java.lang.String fromDeploymentId;
 	private java.lang.String toDeploymentId;
 	private java.lang.String searchProcessVarName;
@@ -67,11 +68,20 @@ public class SearchProcessInstance implements java.io.Serializable {
 		this.searchProcessVarValue = searchProcessVarValue;
 	}
 
-	public SearchProcessInstance(java.lang.String processInstanceId, java.lang.String toProcessId,
-			java.lang.String fromDeploymentId, java.lang.String toDeploymentId, java.lang.String searchProcessVarName,
-			java.lang.String searchProcessVarValue) {
+	public java.lang.String getFromProcessId() {
+		return fromProcessId;
+	}
+
+	public void setFromProcessId(java.lang.String fromProcessId) {
+		this.fromProcessId = fromProcessId;
+	}
+
+	public SearchProcessInstance(String processInstanceId, String toProcessId, String fromProcessId,
+			String fromDeploymentId, String toDeploymentId, String searchProcessVarName, String searchProcessVarValue) {
+		super();
 		this.processInstanceId = processInstanceId;
 		this.toProcessId = toProcessId;
+		this.fromProcessId = fromProcessId;
 		this.fromDeploymentId = fromDeploymentId;
 		this.toDeploymentId = toDeploymentId;
 		this.searchProcessVarName = searchProcessVarName;
@@ -81,9 +91,9 @@ public class SearchProcessInstance implements java.io.Serializable {
 	@Override
 	public String toString() {
 		return "SearchProcessInstance [processInstanceId=" + processInstanceId + ", toProcessId=" + toProcessId
-				+ ", fromDeploymentId=" + fromDeploymentId + ", toDeploymentId=" + toDeploymentId
-				+ ", searchProcessVarName=" + searchProcessVarName + ", searchProcessVarValue=" + searchProcessVarValue
-				+ "]";
+				+ ", fromProcessId=" + fromProcessId + ", fromDeploymentId=" + fromDeploymentId + ", toDeploymentId="
+				+ toDeploymentId + ", searchProcessVarName=" + searchProcessVarName + ", searchProcessVarValue="
+				+ searchProcessVarValue + "]";
 	}
 
 }
