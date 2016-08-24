@@ -16,14 +16,23 @@ import org.kie.internal.runtime.manager.RuntimeManagerRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Dao to access AUDIT LOG SERVICE
+ * 
+ * @author Giovanni Mezzullo
+ *
+ */
 public class ProcessManageDAO {
 
 	private static final Logger log = LoggerFactory.getLogger(AllProcessInstanceHandler.class);
 
+	private List<ProcessInstanceLog> instanceLogList = new ArrayList<ProcessInstanceLog>();
+	private List<org.kie.api.runtime.manager.audit.VariableInstanceLog> variableInstanceLogsList = new ArrayList<>();
+
 	public List<ProcessInstanceLog> retriveActiveProcessInstance(String deploymentID, String processId) {
 		log.info("retriveActiveProcessInstance for PROC-ID [" + processId + "] DEP-ID [" + deploymentID + "]...");
-		List<ProcessInstanceLog> instanceLogList = new ArrayList<>();
 		try {
+			instanceLogList = new ArrayList<ProcessInstanceLog>();
 			JPAAuditLogService auditService = getJPAAuditLogService(deploymentID);
 			instanceLogList = auditService.findActiveProcessInstances(processId);
 			log.info("retriveActiveProcessInstance N." + instanceLogList.size()
@@ -40,13 +49,12 @@ public class ProcessManageDAO {
 	public List<ProcessInstanceLog> retriveActiveProcessInstanceWithVar(String deploymentID, String processID,
 			String varName, Object varValue) {
 		log.info("retriveActiveProcessInstance for PROC-ID [" + processID + "]...");
-		List<ProcessInstanceLog> instanceLogList = new ArrayList<>();
-		List<ProcessInstanceLog> instanceLogListWithValue = new ArrayList<>();
 		try {
+			instanceLogList = new ArrayList<ProcessInstanceLog>();
+			variableInstanceLogsList = new ArrayList<>();
 			JPAAuditLogService auditService = getJPAAuditLogService(deploymentID);
-			instanceLogList = auditService.findActiveProcessInstances(processID);
-
-			for (ProcessInstanceLog processInstanceLog : instanceLogList) {
+			List<ProcessInstanceLog> instanceLogListActiveProc = auditService.findActiveProcessInstances(processID);
+			for (ProcessInstanceLog processInstanceLog : instanceLogListActiveProc) {
 				Long procInstanceId = processInstanceLog.getProcessInstanceId();
 				// Query parametrica per cercare le variabili (piu' recentemente
 				// aggiornate) per deifinito Process Instance ID
@@ -60,7 +68,8 @@ public class ProcessManageDAO {
 							log.info("Found var name [" + varName + "] for Process Instance ID [" + procInstanceId
 									+ "] With Value [" + varValue + "]");
 							if (varValue.equals(infoLastVar.getValue())) {
-								instanceLogListWithValue.add(processInstanceLog);
+								instanceLogList.add(processInstanceLog);
+								variableInstanceLogsList.add(infoLastVar);
 								log.info("MATCH OK ");
 								break;
 							}
@@ -71,14 +80,22 @@ public class ProcessManageDAO {
 							+ "] Of Process [" + processID + "]", exception);
 				}
 			}
+			auditService.dispose();
 
 		} catch (Exception exception) {
 			log.error("EXCEPTION IN FIND ACTIVE PROCESS INSTANCE FOR DEPLOYMENTID [" + deploymentID + "]", exception);
 		}
-		log.info("Found N. " + instanceLogListWithValue.size() + " With Var [" + varName + "] and Value [" + varValue
-				+ "]");
-		printProcInstanceLog(instanceLogListWithValue);
-		return instanceLogListWithValue;
+		log.info("Found N. " + instanceLogList.size() + " With Var [" + varName + "] and Value [" + varValue + "]");
+		printProcInstanceLog(instanceLogList);
+		return instanceLogList;
+	}
+
+	public List<ProcessInstanceLog> getInstanceLogList() {
+		return instanceLogList;
+	}
+
+	public List<org.kie.api.runtime.manager.audit.VariableInstanceLog> getVariableInstanceLogsList() {
+		return variableInstanceLogsList;
 	}
 
 	/*

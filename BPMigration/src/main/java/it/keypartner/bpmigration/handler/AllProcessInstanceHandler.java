@@ -1,8 +1,15 @@
 package it.keypartner.bpmigration.handler;
 
+import it.keypartner.bpmigration.ProcessToMigrate;
 import it.keypartner.bpmigration.SearchProcessInstance;
+import it.keypartner.bpmigration.builder.ProcessToMigrateBuilder;
 import it.keypartner.bpmigration.dao.ProcessManageDAO;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.jbpm.process.audit.ProcessInstanceLog;
 import org.kie.api.runtime.process.WorkItem;
 import org.kie.api.runtime.process.WorkItemHandler;
 import org.kie.api.runtime.process.WorkItemManager;
@@ -21,10 +28,17 @@ public class AllProcessInstanceHandler implements WorkItemHandler {
 		log.info("Params -> " + searchProcessInstance.toString());
 
 		ProcessManageDAO processManageDAO = new ProcessManageDAO();
-		processManageDAO.retriveActiveProcessInstance(searchProcessInstance.getFromDeploymentId(),
-				searchProcessInstance.getFromProcessId());
+		List<ProcessInstanceLog> processFound = processManageDAO.retriveActiveProcessInstance(
+				searchProcessInstance.getFromDeploymentId(), searchProcessInstance.getFromProcessId());
 
-		wkManager.completeWorkItem(workItem.getId(), null);
+		// Invoco il builder per costruire le info da estrarre
+		List<ProcessToMigrate> processToMigrates = ProcessToMigrateBuilder.build(processFound, searchProcessInstance);
+		log.info("Process To Migrate [" + processToMigrates.size() + "]");
+
+		Map<String, Object> results = new HashMap<String, Object>();
+		results.put("out_processList", processToMigrates);
+
+		wkManager.completeWorkItem(workItem.getId(), results);
 	}
 
 	@Override
