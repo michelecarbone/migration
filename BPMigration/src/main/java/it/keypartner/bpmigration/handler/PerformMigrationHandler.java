@@ -18,6 +18,7 @@ public class PerformMigrationHandler implements WorkItemHandler {
 	private static final Logger logger = LoggerFactory.getLogger(MigrationManager.class);
 
 	@SuppressWarnings("unchecked")
+	@Override
 	public void executeWorkItem(WorkItem workItem, WorkItemManager manager) {
 		List<ProcessToMigrate> processToMigrateList = (List<ProcessToMigrate>) workItem
 				.getParameter("in_processToMigrateList");
