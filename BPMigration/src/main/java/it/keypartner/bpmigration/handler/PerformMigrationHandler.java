@@ -27,7 +27,7 @@ public class PerformMigrationHandler implements WorkItemHandler {
 			logger.info("Start Migration for -> " + processToMigrate);
 			String outcome = MigrationManager.migrate(processToMigrate);
 			logger.info("End Migration for -> " + processToMigrate);
-			stringBuilder.append(outcome);
+			stringBuilder.append(outcome + "\n");
 		}
 		Map<String, Object> results = new HashMap<String, Object>();
 		logger.info(stringBuilder.toString());
