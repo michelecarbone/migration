@@ -16,6 +16,7 @@
 &lt;ul&gt;
 	&lt;li&gt;DeploymentID of origin process&amp;nbsp;&lt;/li&gt;
 	&lt;li&gt;DeploymentID of target process&lt;/li&gt;
+	&lt;li&gt;Current Process ID&lt;/li&gt;
 	&lt;li&gt;Target Process ID &amp;nbsp;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -29,6 +30,7 @@ quot;quot;dequot;,quot;&lt;h1&gt;Migrating Process instance&lt;/h1&gt;
 &lt;ul&gt;
 	&lt;li&gt;DeploymentID of origin process&amp;nbsp;&lt;/li&gt;
 	&lt;li&gt;DeploymentID of target process&lt;/li&gt;
+	&lt;li&gt;Current Process ID&lt;/li&gt;
 	&lt;li&gt;Target Process ID &amp;nbsp;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -42,6 +44,7 @@ quot;quot;enquot;,quot;&lt;h1&gt;Migrating Process instance&lt;/h1&gt;
 &lt;ul&gt;
 	&lt;li&gt;DeploymentID of origin process&amp;nbsp;&lt;/li&gt;
 	&lt;li&gt;DeploymentID of target process&lt;/li&gt;
+	&lt;li&gt;Current Process ID&lt;/li&gt;
 	&lt;li&gt;Target Process ID &amp;nbsp;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -55,6 +58,7 @@ quot;quot;esquot;,quot;&lt;h1&gt;Migrating Process instance&lt;/h1&gt;
 &lt;ul&gt;
 	&lt;li&gt;DeploymentID of origin process&amp;nbsp;&lt;/li&gt;
 	&lt;li&gt;DeploymentID of target process&lt;/li&gt;
+	&lt;li&gt;Current Process ID&lt;/li&gt;
 	&lt;li&gt;Target Process ID &amp;nbsp;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -68,6 +72,7 @@ quot;quot;frquot;,quot;&lt;h1&gt;Migrating Process instance&lt;/h1&gt;
 &lt;ul&gt;
 	&lt;li&gt;DeploymentID of origin process&amp;nbsp;&lt;/li&gt;
 	&lt;li&gt;DeploymentID of target process&lt;/li&gt;
+	&lt;li&gt;Current Process ID&lt;/li&gt;
 	&lt;li&gt;Target Process ID &amp;nbsp;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -81,6 +86,7 @@ quot;quot;jaquot;,quot;&lt;h1&gt;Migrating Process instance&lt;/h1&gt;
 &lt;ul&gt;
 	&lt;li&gt;DeploymentID of origin process&amp;nbsp;&lt;/li&gt;
 	&lt;li&gt;DeploymentID of target process&lt;/li&gt;
+	&lt;li&gt;Current Process ID&lt;/li&gt;
 	&lt;li&gt;Target Process ID &amp;nbsp;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -94,6 +100,7 @@ quot;quot;ptquot;,quot;&lt;h1&gt;Migrating Process instance&lt;/h1&gt;
 &lt;ul&gt;
 	&lt;li&gt;DeploymentID of origin process&amp;nbsp;&lt;/li&gt;
 	&lt;li&gt;DeploymentID of target process&lt;/li&gt;
+	&lt;li&gt;Current Process ID&lt;/li&gt;
 	&lt;li&gt;Target Process ID &amp;nbsp;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -107,6 +114,7 @@ quot;quot;zhquot;,quot;&lt;h1&gt;Migrating Process instance&lt;/h1&gt;
 &lt;ul&gt;
 	&lt;li&gt;DeploymentID of origin process&amp;nbsp;&lt;/li&gt;
 	&lt;li&gt;DeploymentID of target process&lt;/li&gt;
+	&lt;li&gt;Current Process ID&lt;/li&gt;
 	&lt;li&gt;Target Process ID &amp;nbsp;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -129,7 +137,7 @@ quot;"/>
 <property name="title" value="quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;quot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
 <property name="readonly" value="false"/>
 <property name="size" value="40"/>
-<property name="rangeFormula" value="{ALL,ALL ACTIVE PROCESS INSTANCE;FILTER,ACTIVE PROCESS INSTANCE WITH VARIABILE;PROCESSID,SINGLE PROCESS}"/>
+<property name="rangeFormula" value="{ALL,ALL ACTIVE PROCESS INSTANCE;FILTER,ACTIVE PROCESS INSTANCE WITH VARIABILE;PROCESSID,SINGLE ACTIVE PROCESS INSTANCE}"/>
 <property name="isHTML" value="false"/>
 <property name="hideContent" value="false"/>
 <property name="outputBinding" value="migrationType"/>
