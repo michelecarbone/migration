@@ -94,8 +94,11 @@ public class ProcessManageDAO {
 
 	private void printProcInstanceLog(List<ProcessInstanceLog> instanceLogList) {
 		for (ProcessInstanceLog instanceLog : instanceLogList) {
-			log.info(instanceLog.getProcessId() + " - " + instanceLog.getProcessInstanceId() + " - "
-					+ instanceLog.getStatus() + " - " + instanceLog.getStart());
+			log.info("ProcessId [" + instanceLog.getProcessId() + "] - ProcessInstanceId ["
+					+ instanceLog.getProcessInstanceId() + "] - Status [" + instanceLog.getStatus() + "] - Start ["
+					+ instanceLog.getStart() + "] - ExternalId [" + instanceLog.getExternalId() + "] - Duration ["
+					+ instanceLog.getDuration() + "] - Outcome [" + instanceLog.getOutcome() + "] - CorrelationKey ["
+					+ instanceLog.getCorrelationKey() + "]");
 		}
 	}
 }
