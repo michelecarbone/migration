@@ -19,6 +19,7 @@
 <property name="errorMessage" value="quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;quot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
 <property name="title" value="quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;quot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
 <property name="readonly" value="true"/>
+<property name="inputBinding" value="migrateProcList"/>
 <property name="defaultSubform" value="ProcessReviewForm.form"/>
 <property name="previewSubform" value="ProcessReviewForm.form"/>
 <property name="tableSubform" value="ProcessReviewForm.form"/>
