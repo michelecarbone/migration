@@ -1,0 +1,56 @@
+
+<form id="1622927993">
+<property name="name" value="InsertSearchParamsProcVar-taskform.form"/>
+<property name="displayMode" value="default"/>
+<property name="status" value="0"/>
+<field position="6" name="searchProc_toProcessId" type="InputText" id="1525050134">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;toProcessId (searchProc)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="searchProc/toProcessId"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<field position="0" name="searchProc_fromDeploymentId" type="InputText" id="350162021">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;fromDeploymentId (searchProc)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="searchProc/fromDeploymentId"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<field position="1" name="searchProc_fromProcessId" type="InputText" id="191430941">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;fromProcessId (searchProc)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="searchProc/fromProcessId"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<field position="3" name="searchProc_searchProcessVarName" type="InputText" id="674375834">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;searchProcessVarName (searchProc)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="searchProc/searchProcessVarName"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<field position="5" name="searchProc_toDeploymentId" type="InputText" id="1439681108">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;toDeploymentId (searchProc)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="searchProc/toDeploymentId"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<field position="2" name="searchProc_processInstanceId" type="InputText" id="753999559">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;processInstanceId (searchProc)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="searchProc/processInstanceId"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<field position="4" name="searchProc_searchProcessVarValue" type="InputText" id="1271826777">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;searchProcessVarValue (searchProc)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="searchProc/searchProcessVarValue"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<dataHolder inputId="" name="#FF54A7" type="dataModelerEntry" outId="searchProc" value="it.keypartner.bpmigration.SearchProcessInstance" id="searchProc"/>
+</form>
