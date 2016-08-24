@@ -3,4 +3,37 @@
 <property name="name" value="ProcessReviewForm.form"/>
 <property name="displayMode" value="default"/>
 <property name="status" value="0"/>
+<field position="2" name="processToMigrate_fromProcessId" type="InputText" id="2006612049">
+<property name="fieldRequired" value="false"/>
+<property name="groupWithPrevious" value="true"/>
+<property name="label" value="quot;enquot;,quot;fromProcessId (processToMigrate)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="processToMigrate/fromProcessId"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<field position="0" name="processToMigrate_processName" type="InputText" id="555790408">
+<property name="fieldRequired" value="false"/>
+<property name="groupWithPrevious" value="false"/>
+<property name="label" value="quot;enquot;,quot;processName (processToMigrate)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="processToMigrate/processName"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<field position="3" name="processToMigrate_processInstanceStartDate" type="InputDate" id="134270415">
+<property name="fieldRequired" value="false"/>
+<property name="groupWithPrevious" value="true"/>
+<property name="label" value="quot;enquot;,quot;processInstanceStartDate (processToMigrate)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="processToMigrate/processInstanceStartDate"/>
+<property name="fieldClass" value="java.util.Date"/>
+</field>
+<field position="1" name="processToMigrate_processInstanceId" type="InputTextPrimitiveLong" id="682352810">
+<property name="fieldRequired" value="false"/>
+<property name="groupWithPrevious" value="true"/>
+<property name="label" value="quot;enquot;,quot;processInstanceId (processToMigrate)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="processToMigrate/processInstanceId"/>
+<property name="fieldClass" value="long"/>
+</field>
+<dataHolder inputId="" name="#0000A0" type="dataModelerEntry" outId="processToMigrate" value="it.keypartner.bpmigration.ProcessToMigrate" id="processToMigrate"/>
 </form>
