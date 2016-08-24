@@ -21,7 +21,8 @@ public class AllProcessInstanceHandler implements WorkItemHandler {
 		log.info("Params -> " + searchProcessInstance.toString());
 
 		ProcessManageDAO processManageDAO = new ProcessManageDAO();
-		processManageDAO.retriveActiveProcessInstance(searchProcessInstance.getFromDeploymentId());
+		processManageDAO.retriveActiveProcessInstance(searchProcessInstance.getFromDeploymentId(),
+				searchProcessInstance.getFromProcessId());
 
 		wkManager.completeWorkItem(workItem.getId(), null);
 	}
