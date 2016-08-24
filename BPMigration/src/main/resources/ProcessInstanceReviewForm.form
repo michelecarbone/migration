@@ -3,4 +3,44 @@
 <property name="name" value="ProcessInstanceReviewForm.form"/>
 <property name="displayMode" value="default"/>
 <property name="status" value="0"/>
+<field position="0" name="processToMigrate_fromProcessId" type="InputText" id="1718043896">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;fromProcessId (processToMigrate)quot;"/>
+<property name="readonly" value="false"/>
+<property name="inputBinding" value="processToMigrate/fromProcessId"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<field position="1" name="processToMigrate_processInstanceId" type="InputTextPrimitiveLong" id="722351144">
+<property name="fieldRequired" value="false"/>
+<property name="groupWithPrevious" value="true"/>
+<property name="label" value="quot;enquot;,quot;processInstanceId (processToMigrate)quot;"/>
+<property name="readonly" value="false"/>
+<property name="inputBinding" value="processToMigrate/processInstanceId"/>
+<property name="fieldClass" value="long"/>
+</field>
+<field position="3" name="processToMigrate_processInstanceStartDate" type="InputDate" id="256628988">
+<property name="fieldRequired" value="false"/>
+<property name="groupWithPrevious" value="true"/>
+<property name="label" value="quot;enquot;,quot;processInstanceStartDate (processToMigrate)quot;"/>
+<property name="readonly" value="false"/>
+<property name="inputBinding" value="processToMigrate/processInstanceStartDate"/>
+<property name="fieldClass" value="java.util.Date"/>
+</field>
+<field position="2" name="processToMigrate_processName" type="InputText" id="2085105132">
+<property name="fieldRequired" value="false"/>
+<property name="groupWithPrevious" value="true"/>
+<property name="label" value="quot;enquot;,quot;processName (processToMigrate)quot;"/>
+<property name="readonly" value="false"/>
+<property name="inputBinding" value="processToMigrate/processName"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<field position="4" name="processToMigrate_fromDeploymentId" type="InputText" id="301242169">
+<property name="fieldRequired" value="false"/>
+<property name="groupWithPrevious" value="true"/>
+<property name="label" value="quot;enquot;,quot;fromDeploymentId (processToMigrate)quot;"/>
+<property name="readonly" value="false"/>
+<property name="inputBinding" value="processToMigrate/fromDeploymentId"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<dataHolder inputId="processToMigrate" name="#0000A0" type="dataModelerEntry" outId="" value="it.keypartner.bpmigration.ProcessToMigrate" id="processToMigrate"/>
 </form>
