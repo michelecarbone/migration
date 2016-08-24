@@ -31,6 +31,7 @@ public class PerformMigrationHandler implements WorkItemHandler {
 		}
 		Map<String, Object> results = new HashMap<String, Object>();
 		logger.info(stringBuilder.toString());
+
 		results.put("out_outcome", stringBuilder.toString());
 
 		manager.completeWorkItem(workItem.getId(), results);
