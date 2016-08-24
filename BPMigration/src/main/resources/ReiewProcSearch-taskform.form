@@ -1,0 +1,15 @@
+
+<form id="316641515">
+<property name="name" value="ReiewProcSearch-taskform.form"/>
+<property name="displayMode" value="default"/>
+<property name="status" value="0"/>
+<field position="0" name="migrateProcList" type="MultipleInput" id="1008515582">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;migrateProcList (migrateProcList)quot;"/>
+<property name="readonly" value="false"/>
+<property name="inputBinding" value="migrateProcList"/>
+<property name="outputBinding" value="migrateProcList"/>
+<property name="fieldClass" value="java.util.List"/>
+</field>
+<dataHolder inputId="migrateProcList" name="#A7E690" type="basicType" outId="migrateProcList" value="java.util.List" id="migrateProcList"/>
+</form>
