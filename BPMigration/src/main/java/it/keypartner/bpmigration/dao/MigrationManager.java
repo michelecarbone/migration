@@ -269,10 +269,10 @@ public class MigrationManager {
 
 			current.destroy();
 			tobe.destroy();
-			outcomeBuffer.append("Migration of process instance (" + processData.getProcessInstanceId()
-					+ ") completed successfully to process " + processData.getToProcessId());
+			outcomeBuffer.append("Successfully migration of process instance (" + processData.getProcessInstanceId()
+					+ ") to process " + processData.getToProcessId());
 		} catch (Exception e) {
-			outcomeBuffer.append("Migration of process instance (" + processData.getProcessInstanceId()
+			outcomeBuffer.append("Failed migration of process instance (" + processData.getProcessInstanceId()
 					+ ") failed due to " + e.getMessage());
 			logger.error("Migration of process instance ({}) failed", processData.getProcessInstanceId(), e);
 		}
