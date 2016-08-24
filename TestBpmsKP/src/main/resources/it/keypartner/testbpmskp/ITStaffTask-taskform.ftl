@@ -48,19 +48,8 @@
 	function taskFormValidator() {
 		var i=0;
 		var myInputs = new Array();
-					myInputs[i] = document.getElementById("ProvaOut");
-					i++;
-
 
 		var j=0;
-						if(notEmpty(myInputs[j]) && !isAlphanumeric(myInputs[j])) {
-							alert("Please enter valid ProvaOut");
-							myInputs[j].focus();
-							return false;
-						}
-			
-					j++;
-
 		return true;
 	}
 </script>
@@ -220,7 +209,6 @@
             	<label for="name">Owners</label>
             	<div class="div_checkbox">
 											bpmsAdmin
-					, Administrator
             	
             	</div>
             	<label for="name">Actor ID</label>
@@ -238,17 +226,17 @@
 
 		<fieldset>
             <legend>Task Inputs</legend>
-                            		<label for="name">NameIns</label>
+                            		<label for="name">in_name</label>
                             		<div class="div_checkbox">
-                              		${NameIns}
+                              		${in_name}
                             		</div>
-                            		<label for="name">EtaIns</label>
+                            		<label for="name">in_surname</label>
                             		<div class="div_checkbox">
-                              		${EtaIns}
+                              		${in_surname}
                             		</div>
-                            		<label for="name">Value</label>
+                            		<label for="name">in_age</label>
                             		<div class="div_checkbox">
-                              		<![CDATA[ciaooo]]>
+                              		${in_age}
                             		</div>
 
             <div class="clear"></div>
@@ -256,12 +244,6 @@
 
           <fieldset>
             <legend>Task Outputs</legend>
-                            		<label for="name">ProvaOut</label>
-                            		<div class="div_texbox">
-                              		<input name="ProvaOut" type="text" class="textbox" id="ProvaOut" value="${ProvaOut}" />
-                            		</div>
-              	
-
           </fieldset>
 	</div>
 	<div id="footer">

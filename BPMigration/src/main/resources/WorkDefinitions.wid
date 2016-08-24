@@ -67,6 +67,17 @@ import org.drools.core.process.core.datatype.impl.type.ObjectDataType;
     ],
     "displayName" : "SearchAllInstance",
     "icon" : "defaultservicenodeicon.png"
+  ],
+    [
+    "name" : "PerformMigration",
+    "parameters" : [
+      "in_processToMigrateList" : new ObjectDataType()
+    ],
+    "results" : [
+        "out_outcome" : new ObjectDataType(),
+    ],
+    "displayName" : "PerformMigration",
+    "icon" : "defaultservicenodeicon.png"
   ]
 
 ]

@@ -4,10 +4,10 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>it.keypartner</groupId>
   <artifactId>TestBpmsKP</artifactId>
-  <version>3.4</version>
+  <version>1.0.2</version>
   <packaging>kjar</packaging>
   <name>TestBpmsKP</name>
-  <description>First Demo Project Key Partner (Giovanni M.)</description>
+  <description>Demo Project Key Partner</description>
   <repositories>
     <repository>
       <id>guvnor-m2-repo</id>

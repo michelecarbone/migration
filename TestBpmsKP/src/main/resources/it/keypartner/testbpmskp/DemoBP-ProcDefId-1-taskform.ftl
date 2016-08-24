@@ -48,8 +48,34 @@
 	function taskFormValidator() {
 		var i=0;
 		var myInputs = new Array();
+					myInputs[i] = document.getElementById("name");
+					i++;
+					myInputs[i] = document.getElementById("age");
+					i++;
+					myInputs[i] = document.getElementById("surname");
+					i++;
+
 
 		var j=0;
+						if(notEmpty(myInputs[j]) && !isAlphanumeric(myInputs[j])) {
+							alert("Please enter valid name");
+							myInputs[j].focus();
+							return false;
+						}
+					j++;
+						if(notEmpty(myInputs[j]) && !isNumeric(myInputs[j])) {
+							alert("Please enter valid age");
+							myInputs[j].focus();
+							return false;
+						}
+					j++;
+						if(notEmpty(myInputs[j]) && !isAlphanumeric(myInputs[j])) {
+							alert("Please enter valid surname");
+							myInputs[j].focus();
+							return false;
+						}
+					j++;
+
 		return true;
 	}
 </script>
@@ -200,55 +226,28 @@
 </style>
 <div id="container">
 	<div id="header">
-		User Task Form: DemoBP.HRResourceTask
+		New Process Instance: /TestBpmsKP/src/main/resources/it/keypartner/testbpmskp.DemoBP
 	</div>
 	<div id="content">
-	    <input type="hidden" name="taskId" value="${task.id}"/>
+	    <input type="hidden" name="processId" value="${process.id}"/>
 		<fieldset>
-            <legend>Task Info</legend>
-            	<label for="name">Owners</label>
-            	<div class="div_checkbox">
-											bpmsAdmin
-					, #(initiator)
-            	
-            	</div>
-            	<label for="name">Actor ID</label>
-            	<div class="div_checkbox"></div>
-            	<label for="name">Group</label>
-            	<div class="div_checkbox"></div>
-            	<label for="name">Skippable</label>
-            	<div class="div_checkbox">true</div>
-            	<label for="name">Priority</label>
-            	<div class="div_checkbox"></div>
-            	<label for="name">Comment</label>
-            	<div class="div_checkbox"></div>
-            <div class="clear"></div>
-          </fieldset>
+            <legend>Process inputs</legend>
+                            		<label for="name">name</label>
+                            		<div class="div_texbox">
+                              		<input name="name" type="text" class="textbox" id="name" value="" />
+                            		</div>
+              	
+                            		<label for="name">age</label>
+                            		<div class="div_texbox">
+                              		<input name="age" type="text" class="textbox" id="age" value="" />
+                            		</div>
+              	
+                            		<label for="name">surname</label>
+                            		<div class="div_texbox">
+                              		<input name="surname" type="text" class="textbox" id="surname" value="" />
+                            		</div>
+              	
 
-		<fieldset>
-            <legend>Task Inputs</legend>
-                            		<label for="name">in_name</label>
-                            		<div class="div_checkbox">
-                              		${in_name}
-                            		</div>
-                            		<label for="name">in_surname</label>
-                            		<div class="div_checkbox">
-                              		${in_surname}
-                            		</div>
-                            		<label for="name">in_age</label>
-                            		<div class="div_checkbox">
-                              		${in_age}
-                            		</div>
-                            		<label for="name">in_Surname</label>
-                            		<div class="div_checkbox">
-                              		${in_Surname}
-                            		</div>
-
-            <div class="clear"></div>
-          </fieldset>
-
-          <fieldset>
-            <legend>Task Outputs</legend>
           </fieldset>
 	</div>
 	<div id="footer">
