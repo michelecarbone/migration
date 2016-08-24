@@ -7,7 +7,7 @@
   <version>1.0</version>
   <packaging>kjar</packaging>
   <name>TestBpmsKP</name>
-  <description>First Demo Project Key Partner (Giovanni M.)</description>
+  <description>Demo Project Key Partner</description>
   <repositories>
     <repository>
       <id>guvnor-m2-repo</id>
