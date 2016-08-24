@@ -7,7 +7,111 @@
 <property name="fieldRequired" value="false"/>
 <property name="groupWithPrevious" value="false"/>
 <property name="readonly" value="false"/>
-<property name="htmlContent" value="quot;caquot;,quot;&lt;h1&gt;Migrating Process instance&lt;/h1&gt;  &lt;h3&gt;Upgrade a workflow process instance to a newer process instance.&lt;/h3&gt;  &lt;h3&gt;You need to provide:&lt;/h3&gt;  &lt;ul&gt;  &lt;li&gt;DeploymentID of origin process&amp;nbsp;&lt;/li&gt;  &lt;li&gt;DeploymentID of target process&lt;/li&gt;  &lt;li&gt;Target Process ID &amp;nbsp;&lt;/li&gt; &lt;/ul&gt;  &lt;p&gt;We can search process instance to migrate from following:&lt;/p&gt; quot;quot;dequot;,quot;&lt;h1&gt;Migrating Process instance&lt;/h1&gt;  &lt;h3&gt;Upgrade a workflow process instance to a newer process instance.&lt;/h3&gt;  &lt;h3&gt;You need to provide:&lt;/h3&gt;  &lt;ul&gt;  &lt;li&gt;DeploymentID of origin process&amp;nbsp;&lt;/li&gt;  &lt;li&gt;DeploymentID of target process&lt;/li&gt;  &lt;li&gt;Target Process ID &amp;nbsp;&lt;/li&gt; &lt;/ul&gt;  &lt;p&gt;We can search process instance to migrate from following:&lt;/p&gt; quot;quot;enquot;,quot;&lt;h1&gt;Migrating Process instance&lt;/h1&gt;  &lt;h3&gt;Upgrade a workflow process instance to a newer process instance.&lt;/h3&gt;  &lt;h3&gt;You need to provide:&lt;/h3&gt;  &lt;ul&gt;  &lt;li&gt;DeploymentID of origin process&amp;nbsp;&lt;/li&gt;  &lt;li&gt;DeploymentID of target process&lt;/li&gt;  &lt;li&gt;Target Process ID &amp;nbsp;&lt;/li&gt; &lt;/ul&gt;  &lt;p&gt;We can search process instance to migrate from following:&lt;/p&gt; quot;quot;esquot;,quot;&lt;h1&gt;Migrating Process instance&lt;/h1&gt;  &lt;h3&gt;Upgrade a workflow process instance to a newer process instance.&lt;/h3&gt;  &lt;h3&gt;You need to provide:&lt;/h3&gt;  &lt;ul&gt;  &lt;li&gt;DeploymentID of origin process&amp;nbsp;&lt;/li&gt;  &lt;li&gt;DeploymentID of target process&lt;/li&gt;  &lt;li&gt;Target Process ID &amp;nbsp;&lt;/li&gt; &lt;/ul&gt;  &lt;p&gt;We can search process instance to migrate from following:&lt;/p&gt; quot;quot;frquot;,quot;&lt;h1&gt;Migrating Process instance&lt;/h1&gt;  &lt;h3&gt;Upgrade a workflow process instance to a newer process instance.&lt;/h3&gt;  &lt;h3&gt;You need to provide:&lt;/h3&gt;  &lt;ul&gt;  &lt;li&gt;DeploymentID of origin process&amp;nbsp;&lt;/li&gt;  &lt;li&gt;DeploymentID of target process&lt;/li&gt;  &lt;li&gt;Target Process ID &amp;nbsp;&lt;/li&gt; &lt;/ul&gt;  &lt;p&gt;We can search process instance to migrate from following:&lt;/p&gt; quot;quot;jaquot;,quot;&lt;h1&gt;Migrating Process instance&lt;/h1&gt;  &lt;h3&gt;Upgrade a workflow process instance to a newer process instance.&lt;/h3&gt;  &lt;h3&gt;You need to provide:&lt;/h3&gt;  &lt;ul&gt;  &lt;li&gt;DeploymentID of origin process&amp;nbsp;&lt;/li&gt;  &lt;li&gt;DeploymentID of target process&lt;/li&gt;  &lt;li&gt;Target Process ID &amp;nbsp;&lt;/li&gt; &lt;/ul&gt;  &lt;p&gt;We can search process instance to migrate from following:&lt;/p&gt; quot;quot;ptquot;,quot;&lt;h1&gt;Migrating Process instance&lt;/h1&gt;  &lt;h3&gt;Upgrade a workflow process instance to a newer process instance.&lt;/h3&gt;  &lt;h3&gt;You need to provide:&lt;/h3&gt;  &lt;ul&gt;  &lt;li&gt;DeploymentID of origin process&amp;nbsp;&lt;/li&gt;  &lt;li&gt;DeploymentID of target process&lt;/li&gt;  &lt;li&gt;Target Process ID &amp;nbsp;&lt;/li&gt; &lt;/ul&gt;  &lt;p&gt;We can search process instance to migrate from following:&lt;/p&gt; quot;quot;zhquot;,quot;&lt;h1&gt;Migrating Process instance&lt;/h1&gt;  &lt;h3&gt;Upgrade a workflow process instance to a newer process instance.&lt;/h3&gt;  &lt;h3&gt;You need to provide:&lt;/h3&gt;  &lt;ul&gt;  &lt;li&gt;DeploymentID of origin process&amp;nbsp;&lt;/li&gt;  &lt;li&gt;DeploymentID of target process&lt;/li&gt;  &lt;li&gt;Target Process ID &amp;nbsp;&lt;/li&gt; &lt;/ul&gt;  &lt;p&gt;We can search process instance to migrate from following:&lt;/p&gt; quot;"/>
+<property name="htmlContent" value="quot;caquot;,quot;&lt;h1&gt;Migrating Process instance&lt;/h1&gt;
+
+&lt;h3&gt;Upgrade a workflow process instance to a newer process instance.&lt;/h3&gt;
+
+&lt;h3&gt;You need to provide:&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;DeploymentID of origin process&amp;nbsp;&lt;/li&gt;
+	&lt;li&gt;DeploymentID of target process&lt;/li&gt;
+	&lt;li&gt;Target Process ID &amp;nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We can search process instance to migrate from following:&lt;/p&gt;
+quot;quot;dequot;,quot;&lt;h1&gt;Migrating Process instance&lt;/h1&gt;
+
+&lt;h3&gt;Upgrade a workflow process instance to a newer process instance.&lt;/h3&gt;
+
+&lt;h3&gt;You need to provide:&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;DeploymentID of origin process&amp;nbsp;&lt;/li&gt;
+	&lt;li&gt;DeploymentID of target process&lt;/li&gt;
+	&lt;li&gt;Target Process ID &amp;nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We can search process instance to migrate from following:&lt;/p&gt;
+quot;quot;enquot;,quot;&lt;h1&gt;Migrating Process instance&lt;/h1&gt;
+
+&lt;h3&gt;Upgrade a workflow process instance to a newer process instance.&lt;/h3&gt;
+
+&lt;h3&gt;You need to provide:&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;DeploymentID of origin process&amp;nbsp;&lt;/li&gt;
+	&lt;li&gt;DeploymentID of target process&lt;/li&gt;
+	&lt;li&gt;Target Process ID &amp;nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We can search process instance to migrate from following:&lt;/p&gt;
+quot;quot;esquot;,quot;&lt;h1&gt;Migrating Process instance&lt;/h1&gt;
+
+&lt;h3&gt;Upgrade a workflow process instance to a newer process instance.&lt;/h3&gt;
+
+&lt;h3&gt;You need to provide:&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;DeploymentID of origin process&amp;nbsp;&lt;/li&gt;
+	&lt;li&gt;DeploymentID of target process&lt;/li&gt;
+	&lt;li&gt;Target Process ID &amp;nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We can search process instance to migrate from following:&lt;/p&gt;
+quot;quot;frquot;,quot;&lt;h1&gt;Migrating Process instance&lt;/h1&gt;
+
+&lt;h3&gt;Upgrade a workflow process instance to a newer process instance.&lt;/h3&gt;
+
+&lt;h3&gt;You need to provide:&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;DeploymentID of origin process&amp;nbsp;&lt;/li&gt;
+	&lt;li&gt;DeploymentID of target process&lt;/li&gt;
+	&lt;li&gt;Target Process ID &amp;nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We can search process instance to migrate from following:&lt;/p&gt;
+quot;quot;jaquot;,quot;&lt;h1&gt;Migrating Process instance&lt;/h1&gt;
+
+&lt;h3&gt;Upgrade a workflow process instance to a newer process instance.&lt;/h3&gt;
+
+&lt;h3&gt;You need to provide:&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;DeploymentID of origin process&amp;nbsp;&lt;/li&gt;
+	&lt;li&gt;DeploymentID of target process&lt;/li&gt;
+	&lt;li&gt;Target Process ID &amp;nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We can search process instance to migrate from following:&lt;/p&gt;
+quot;quot;ptquot;,quot;&lt;h1&gt;Migrating Process instance&lt;/h1&gt;
+
+&lt;h3&gt;Upgrade a workflow process instance to a newer process instance.&lt;/h3&gt;
+
+&lt;h3&gt;You need to provide:&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;DeploymentID of origin process&amp;nbsp;&lt;/li&gt;
+	&lt;li&gt;DeploymentID of target process&lt;/li&gt;
+	&lt;li&gt;Target Process ID &amp;nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We can search process instance to migrate from following:&lt;/p&gt;
+quot;quot;zhquot;,quot;&lt;h1&gt;Migrating Process instance&lt;/h1&gt;
+
+&lt;h3&gt;Upgrade a workflow process instance to a newer process instance.&lt;/h3&gt;
+
+&lt;h3&gt;You need to provide:&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;DeploymentID of origin process&amp;nbsp;&lt;/li&gt;
+	&lt;li&gt;DeploymentID of target process&lt;/li&gt;
+	&lt;li&gt;Target Process ID &amp;nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We can search process instance to migrate from following:&lt;/p&gt;
+quot;"/>
 <property name="fieldClass" value="HTMLlabel"/>
 </field>
 <field position="1" name=":decorator_0" type="Separator" id="1184733968">
@@ -20,11 +124,12 @@
 <field position="2" name="migrationType" type="InputText" id="1489539385">
 <property name="fieldRequired" value="true"/>
 <property name="groupWithPrevious" value="false"/>
-<property name="label" value="quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;Migration Typequot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
+<property name="label" value="quot;SSClassquot;,quot;quot;quot;SSStylequot;,quot;quot;quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;Migration Typequot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
 <property name="errorMessage" value="quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;quot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
 <property name="title" value="quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;quot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
 <property name="readonly" value="false"/>
-<property name="rangeFormula" value="{ALL,TUTTI I PROCESSI ATTIVI;FILTER,PROCESSI CON VARIABILI; PROCESSID,PROCESSO SINGOLO}"/>
+<property name="size" value="40"/>
+<property name="rangeFormula" value="{ALL,ALL ACTIVE PROCESS INSTANCE;FILTER,ACTIVE PROCESS INSTANCE WITH VARIABILE;PROCESSID,SINGLE PROCESS}"/>
 <property name="isHTML" value="false"/>
 <property name="hideContent" value="false"/>
 <property name="outputBinding" value="migrationType"/>
