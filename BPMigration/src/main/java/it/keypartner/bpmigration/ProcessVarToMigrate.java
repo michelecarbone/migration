@@ -46,7 +46,11 @@ public class ProcessVarToMigrate extends ProcessToMigrate {
 	@Override
 	public String toString() {
 		return "ProcessVarToMigrate [varName=" + varName + ", varValue=" + varValue + ", modifiedData=" + modifiedData
-				+ "]";
+				+ ", getToProcessId()=" + getToProcessId() + ", getFromProcessId()=" + getFromProcessId()
+				+ ", getFromDeploymentId()=" + getFromDeploymentId() + ", getToDeploymentId()=" + getToDeploymentId()
+				+ ", getProcessInstanceStartDate()=" + getProcessInstanceStartDate() + ", getProcessName()="
+				+ getProcessName() + ", getProcessInstanceId()=" + getProcessInstanceId() + ", toString()="
+				+ super.toString() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + "]";
 	}
 
 }
