@@ -3,47 +3,34 @@
 <property name="name" value="InsertSearchParamsProcVar-taskform.form"/>
 <property name="displayMode" value="default"/>
 <property name="status" value="0"/>
-<field position="5" name="varParamsSearch_searchProcessVarValue" type="InputText" id="72237618">
+<field position="1" name="varParamsSearch_searchProcessVarName" type="InputText" id="2082430746">
+<property name="fieldRequired" value="false"/>
+<property name="groupWithPrevious" value="false"/>
+<property name="label" value="quot;SSClassquot;,quot;quot;quot;SSStylequot;,quot;quot;quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;searchProcessVarName (varParamsSearch)quot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
+<property name="errorMessage" value="quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;quot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
+<property name="title" value="quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;quot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
+<property name="readonly" value="false"/>
+<property name="isHTML" value="false"/>
+<property name="hideContent" value="false"/>
+<property name="outputBinding" value="varParamSearch/searchProcessVarName"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<field position="2" name="varParamsSearch_searchProcessVarValue" type="InputText" id="72237618">
 <property name="fieldRequired" value="false"/>
 <property name="label" value="quot;enquot;,quot;searchProcessVarValue (varParamsSearch)quot;"/>
 <property name="readonly" value="false"/>
 <property name="outputBinding" value="varParamSearch/searchProcessVarValue"/>
 <property name="fieldClass" value="java.lang.String"/>
 </field>
-<field position="2" name="basicParamSearch_toDeploymentId" type="InputText" id="1930867172">
+<field position="0" name="1282067754" type="Subform" id="1282067754">
 <property name="fieldRequired" value="false"/>
-<property name="label" value="quot;enquot;,quot;toDeploymentId (basicParamSearch)quot;"/>
+<property name="groupWithPrevious" value="false"/>
+<property name="label" value="quot;SSClassquot;,quot;quot;quot;SSStylequot;,quot;quot;quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;Subform2quot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
+<property name="errorMessage" value="quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;quot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
+<property name="title" value="quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;quot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
 <property name="readonly" value="false"/>
-<property name="outputBinding" value="basicParamSearch/toDeploymentId"/>
-<property name="fieldClass" value="java.lang.String"/>
-</field>
-<field position="3" name="basicParamSearch_toProcessId" type="InputText" id="135896261">
-<property name="fieldRequired" value="false"/>
-<property name="label" value="quot;enquot;,quot;toProcessId (basicParamSearch)quot;"/>
-<property name="readonly" value="false"/>
-<property name="outputBinding" value="basicParamSearch/toProcessId"/>
-<property name="fieldClass" value="java.lang.String"/>
-</field>
-<field position="4" name="varParamsSearch_searchProcessVarName" type="InputText" id="2082430746">
-<property name="fieldRequired" value="false"/>
-<property name="label" value="quot;enquot;,quot;searchProcessVarName (varParamsSearch)quot;"/>
-<property name="readonly" value="false"/>
-<property name="outputBinding" value="varParamSearch/searchProcessVarName"/>
-<property name="fieldClass" value="java.lang.String"/>
-</field>
-<field position="1" name="basicParamSearch_fromProcessId" type="InputText" id="1572494034">
-<property name="fieldRequired" value="false"/>
-<property name="label" value="quot;enquot;,quot;fromProcessId (basicParamSearch)quot;"/>
-<property name="readonly" value="false"/>
-<property name="outputBinding" value="basicParamSearch/fromProcessId"/>
-<property name="fieldClass" value="java.lang.String"/>
-</field>
-<field position="0" name="basicParamSearch_fromDeploymentId" type="InputText" id="1482279609">
-<property name="fieldRequired" value="false"/>
-<property name="label" value="quot;enquot;,quot;fromDeploymentId (basicParamSearch)quot;"/>
-<property name="readonly" value="false"/>
-<property name="outputBinding" value="basicParamSearch/fromDeploymentId"/>
-<property name="fieldClass" value="java.lang.String"/>
+<property name="defaultSubform" value="BasicParamSearchForm.form"/>
+<property name="fieldClass" value="java.lang.Object"/>
 </field>
 <dataHolder inputId="" name="#9BCAFA" type="dataModelerEntry" outId="basicParamSearch" value="it.keypartner.bpmigration.BasicParamSearchProcessInstance" id="basicParamSearch"/>
 <dataHolder inputId="" name="#FF8881" type="dataModelerEntry" outId="varParamSearch" value="it.keypartner.bpmigration.VarParamSearchProcessInstance" id="varParamsSearch"/>
