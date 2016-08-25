@@ -1,0 +1,50 @@
+
+<form id="364685790">
+<property name="name" value="InsertSearchParamsProcVar-taskform.form"/>
+<property name="displayMode" value="default"/>
+<property name="status" value="0"/>
+<field position="5" name="varParamsSearch_searchProcessVarValue" type="InputText" id="72237618">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;searchProcessVarValue (varParamsSearch)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="varParamSearch/searchProcessVarValue"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<field position="2" name="basicParamSearch_toDeploymentId" type="InputText" id="1930867172">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;toDeploymentId (basicParamSearch)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="basicParamSearch/toDeploymentId"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<field position="3" name="basicParamSearch_toProcessId" type="InputText" id="135896261">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;toProcessId (basicParamSearch)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="basicParamSearch/toProcessId"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<field position="4" name="varParamsSearch_searchProcessVarName" type="InputText" id="2082430746">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;searchProcessVarName (varParamsSearch)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="varParamSearch/searchProcessVarName"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<field position="1" name="basicParamSearch_fromProcessId" type="InputText" id="1572494034">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;fromProcessId (basicParamSearch)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="basicParamSearch/fromProcessId"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<field position="0" name="basicParamSearch_fromDeploymentId" type="InputText" id="1482279609">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;fromDeploymentId (basicParamSearch)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="basicParamSearch/fromDeploymentId"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<dataHolder inputId="" name="#9BCAFA" type="dataModelerEntry" outId="basicParamSearch" value="it.keypartner.bpmigration.BasicParamSearchProcessInstance" id="basicParamSearch"/>
+<dataHolder inputId="" name="#FF8881" type="dataModelerEntry" outId="varParamSearch" value="it.keypartner.bpmigration.VarParamSearchProcessInstance" id="varParamsSearch"/>
+</form>
