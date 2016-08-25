@@ -48,8 +48,19 @@
 	function taskFormValidator() {
 		var i=0;
 		var myInputs = new Array();
+					myInputs[i] = document.getElementById("basicParamSearch");
+					i++;
+
 
 		var j=0;
+						if(notEmpty(myInputs[j]) && !isAlphanumeric(myInputs[j])) {
+							alert("Please enter valid basicParamSearch");
+							myInputs[j].focus();
+							return false;
+						}
+			
+					j++;
+
 		return true;
 	}
 </script>
@@ -208,6 +219,7 @@
             <legend>Task Info</legend>
             	<label for="name">Owners</label>
             	<div class="div_checkbox">
+											bpmsAdmin
             	
             	</div>
             	<label for="name">Actor ID</label>
@@ -230,6 +242,12 @@
 
           <fieldset>
             <legend>Task Outputs</legend>
+                            		<label for="name">basicParamSearch</label>
+                            		<div class="div_texbox">
+                              		<input name="basicParamSearch" type="text" class="textbox" id="basicParamSearch" value="${basicParamSearch}" />
+                            		</div>
+              	
+
           </fieldset>
 	</div>
 	<div id="footer">
