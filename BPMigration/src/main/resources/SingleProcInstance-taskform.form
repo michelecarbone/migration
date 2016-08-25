@@ -1,0 +1,43 @@
+
+<form id="288559918">
+<property name="name" value="SingleProcInstance-taskform.form"/>
+<property name="displayMode" value="default"/>
+<property name="status" value="0"/>
+<field position="3" name="basicParamSearch_toProcessId" type="InputText" id="1912875397">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;toProcessId (basicParamSearch)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="basicParamSearch/toProcessId"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<field position="2" name="basicParamSearch_toDeploymentId" type="InputText" id="1181230332">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;toDeploymentId (basicParamSearch)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="basicParamSearch/toDeploymentId"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<field position="1" name="basicParamSearch_fromProcessId" type="InputText" id="422495836">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;fromProcessId (basicParamSearch)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="basicParamSearch/fromProcessId"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<field position="0" name="basicParamSearch_fromDeploymentId" type="InputText" id="1905263638">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;fromDeploymentId (basicParamSearch)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="basicParamSearch/fromDeploymentId"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<field position="4" name="singleProcessInstanceId" type="InputText" id="2136167254">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;procInstanceId (singleProcessInstanceId)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="procInstanceId"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<dataHolder inputId="" name="#B29FE4" type="dataModelerEntry" outId="basicParamSearch" value="it.keypartner.bpmigration.BasicParamSearchProcessInstance" id="basicParamSearch"/>
+<dataHolder inputId="" name="#FF8881" type="basicType" outId="procInstanceId" value="java.lang.String" id="singleProcessInstanceId"/>
+</form>
