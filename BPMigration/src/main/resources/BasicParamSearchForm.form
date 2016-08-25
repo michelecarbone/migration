@@ -3,4 +3,5 @@
 <property name="name" value="BasicParamSearchForm.form"/>
 <property name="displayMode" value="default"/>
 <property name="status" value="0"/>
+<dataHolder inputId="" name="#0000A0" type="dataModelerEntry" outId="basicParamSearch" value="it.keypartner.bpmigration.BasicParamSearchProcessInstance" id="basicParamSearchForm"/>
 </form>
