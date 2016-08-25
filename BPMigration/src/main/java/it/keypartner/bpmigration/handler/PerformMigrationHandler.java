@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
 
 public class PerformMigrationHandler implements WorkItemHandler {
 
-	private static final Logger logger = LoggerFactory.getLogger(MigrationManager.class);
+	private static final Logger log = LoggerFactory.getLogger(MigrationManager.class);
 
 	@SuppressWarnings("unchecked")
 	@Override
@@ -24,13 +24,13 @@ public class PerformMigrationHandler implements WorkItemHandler {
 				.getParameter("in_processToMigrateList");
 		StringBuilder stringBuilder = new StringBuilder();
 		for (ProcessToMigrate processToMigrate : processToMigrateList) {
-			logger.info("Start Migration for -> " + processToMigrate);
+			log.info("Start Migration for -> " + processToMigrate);
 			String outcome = MigrationManager.migrate(processToMigrate);
-			logger.info("End Migration for -> " + processToMigrate);
+			log.info("End Migration for -> " + processToMigrate);
 			stringBuilder.append(outcome + "\n");
 		}
 		Map<String, Object> results = new HashMap<String, Object>();
-		logger.info(stringBuilder.toString());
+		log.info(stringBuilder.toString());
 
 		results.put("out_outcome", stringBuilder.toString());
 

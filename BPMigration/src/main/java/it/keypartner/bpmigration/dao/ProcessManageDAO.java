@@ -18,9 +18,6 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Dao to access AUDIT LOG SERVICE
- * 
- * @author Giovanni Mezzullo
- *
  */
 public class ProcessManageDAO {
 
@@ -28,6 +25,24 @@ public class ProcessManageDAO {
 
 	private List<ProcessInstanceLog> instanceLogList = new ArrayList<ProcessInstanceLog>();
 	private List<org.kie.api.runtime.manager.audit.VariableInstanceLog> variableInstanceLogsList = new ArrayList<>();
+
+	public ProcessInstanceLog retriveProcessInstance(String deploymentID, String processInstanceId) {
+		log.info("retriveProcessInstance for PROC-INSTANCE-ID [" + processInstanceId + "] DEP-ID [" + deploymentID
+				+ "]...");
+		ProcessInstanceLog instanceLog = null;
+		try {
+			JPAAuditLogService auditService = getJPAAuditLogService(deploymentID);
+			instanceLog = auditService.findProcessInstance(Long.valueOf(processInstanceId));
+			log.info("retriveProcessInstance N." + instanceLogList.size() + " Process Instance for PROC-ID ["
+					+ processInstanceId + "] DEP-ID [" + deploymentID + "]...");
+			printProcessInstance(instanceLog);
+			auditService.dispose();
+		} catch (Exception exception) {
+			log.error("EXCEPTION IN FIND ACTIVE PROCESS INSTANCE FOR PROC-ID [" + processInstanceId
+					+ "] AND DEPLOYMENTID [" + deploymentID + "]", exception);
+		}
+		return instanceLog;
+	}
 
 	public List<ProcessInstanceLog> retriveActiveProcessInstance(String deploymentID, String processId) {
 		log.info("retriveActiveProcessInstance for PROC-ID [" + processId + "] DEP-ID [" + deploymentID + "]...");
@@ -111,11 +126,15 @@ public class ProcessManageDAO {
 
 	private void printProcInstanceLog(List<ProcessInstanceLog> instanceLogList) {
 		for (ProcessInstanceLog instanceLog : instanceLogList) {
-			log.info("ProcessId [" + instanceLog.getProcessId() + "] - ProcessInstanceId ["
-					+ instanceLog.getProcessInstanceId() + "] - Status [" + instanceLog.getStatus() + "] - Start ["
-					+ instanceLog.getStart() + "] - ExternalId [" + instanceLog.getExternalId() + "] - Duration ["
-					+ instanceLog.getDuration() + "] - Outcome [" + instanceLog.getOutcome() + "] - CorrelationKey ["
-					+ instanceLog.getCorrelationKey() + "]");
+			printProcessInstance(instanceLog);
 		}
+	}
+
+	private void printProcessInstance(ProcessInstanceLog instanceLog) {
+		log.info("ProcessId [" + instanceLog.getProcessId() + "] - ProcessInstanceId ["
+				+ instanceLog.getProcessInstanceId() + "] - Status [" + instanceLog.getStatus() + "] - Start ["
+				+ instanceLog.getStart() + "] - ExternalId [" + instanceLog.getExternalId() + "] - Duration ["
+				+ instanceLog.getDuration() + "] - Outcome [" + instanceLog.getOutcome() + "] - CorrelationKey ["
+				+ instanceLog.getCorrelationKey() + "]");
 	}
 }
