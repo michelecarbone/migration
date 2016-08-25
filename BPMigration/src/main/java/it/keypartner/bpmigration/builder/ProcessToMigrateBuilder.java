@@ -1,8 +1,9 @@
 package it.keypartner.bpmigration.builder;
 
+import it.keypartner.bpmigration.BasicParamSearchProcessInstance;
 import it.keypartner.bpmigration.ProcessToMigrate;
 import it.keypartner.bpmigration.ProcessVarToMigrate;
-import it.keypartner.bpmigration.SearchProcessInstance;
+import it.keypartner.bpmigration.VarParamSearchProcessInstance;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +21,7 @@ public class ProcessToMigrateBuilder {
 	private static final Logger log = LoggerFactory.getLogger(ProcessToMigrateBuilder.class);
 
 	public static List<ProcessToMigrate> build(List<ProcessInstanceLog> processInstanceLogList,
-			SearchProcessInstance searchProcessInstance) {
+			BasicParamSearchProcessInstance searchProcessInstance) {
 		List<ProcessToMigrate> listProcessToMigrate = new ArrayList<>();
 		for (ProcessInstanceLog processInstanceLog : processInstanceLogList) {
 			listProcessToMigrate.add(ProcessToMigrateBuilder.build(processInstanceLog, searchProcessInstance));
@@ -30,14 +31,15 @@ public class ProcessToMigrateBuilder {
 
 	public static List<ProcessVarToMigrate> build(List<ProcessInstanceLog> processInstanceLogList,
 			List<org.kie.api.runtime.manager.audit.VariableInstanceLog> variableInstanceLogsList,
-			SearchProcessInstance searchProcessInstance) {
+			VarParamSearchProcessInstance searchProcessInstance,
+			BasicParamSearchProcessInstance basicParamSearchProcessInstance) {
 		List<ProcessVarToMigrate> listProcessToMigrate = new ArrayList<>();
 		for (ProcessInstanceLog processInstanceLog : processInstanceLogList) {
 			for (org.kie.api.runtime.manager.audit.VariableInstanceLog variableInstanceLog : variableInstanceLogsList) {
 				if (variableInstanceLog.getProcessInstanceId().compareTo(processInstanceLog.getProcessInstanceId()) == 0) {
 					log.info("Found same processId and VariabileProcessID");
 					listProcessToMigrate.add(ProcessToMigrateBuilder.build(processInstanceLog, variableInstanceLog,
-							searchProcessInstance));
+							searchProcessInstance, basicParamSearchProcessInstance));
 					break;
 				}
 			}
@@ -46,7 +48,7 @@ public class ProcessToMigrateBuilder {
 	}
 
 	public static ProcessToMigrate build(ProcessInstanceLog processInstanceLog,
-			SearchProcessInstance searchProcessInstance) {
+			BasicParamSearchProcessInstance searchProcessInstance) {
 		ProcessToMigrate processToMigrate = new ProcessToMigrate(processInstanceLog.getProcessInstanceId(),
 				searchProcessInstance.getToProcessId(), searchProcessInstance.getFromProcessId(),
 				searchProcessInstance.getFromDeploymentId(), searchProcessInstance.getToDeploymentId(),
@@ -56,7 +58,8 @@ public class ProcessToMigrateBuilder {
 
 	public static ProcessVarToMigrate build(ProcessInstanceLog processInstanceLog,
 			org.kie.api.runtime.manager.audit.VariableInstanceLog variableInstanceLog,
-			SearchProcessInstance searchProcessInstance) {
+			VarParamSearchProcessInstance varParamSearchProcessInstance,
+			BasicParamSearchProcessInstance searchProcessInstance) {
 		ProcessVarToMigrate processToMigrate = new ProcessVarToMigrate(processInstanceLog.getProcessInstanceId(),
 				searchProcessInstance.getToProcessId(), searchProcessInstance.getFromProcessId(),
 				searchProcessInstance.getFromDeploymentId(), searchProcessInstance.getToDeploymentId(),

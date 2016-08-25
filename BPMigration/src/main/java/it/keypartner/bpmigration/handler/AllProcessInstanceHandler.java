@@ -1,7 +1,7 @@
 package it.keypartner.bpmigration.handler;
 
+import it.keypartner.bpmigration.BasicParamSearchProcessInstance;
 import it.keypartner.bpmigration.ProcessToMigrate;
-import it.keypartner.bpmigration.SearchProcessInstance;
 import it.keypartner.bpmigration.builder.ProcessToMigrateBuilder;
 import it.keypartner.bpmigration.dao.ProcessManageDAO;
 
@@ -24,7 +24,8 @@ public class AllProcessInstanceHandler implements WorkItemHandler {
 	public void executeWorkItem(WorkItem workItem, WorkItemManager wkManager) {
 		log.info("Calling search ...");
 
-		SearchProcessInstance searchProcessInstance = (SearchProcessInstance) workItem.getParameter("in_search");
+		BasicParamSearchProcessInstance searchProcessInstance = (BasicParamSearchProcessInstance) workItem
+				.getParameter("in_search");
 		log.info("Params -> " + searchProcessInstance.toString());
 
 		ProcessManageDAO processManageDAO = new ProcessManageDAO();

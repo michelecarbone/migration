@@ -2,7 +2,6 @@ package it.keypartner.bpmigration.handler;
 
 import it.keypartner.bpmigration.BasicParamSearchProcessInstance;
 import it.keypartner.bpmigration.ProcessVarToMigrate;
-import it.keypartner.bpmigration.SearchProcessInstance;
 import it.keypartner.bpmigration.VarParamSearchProcessInstance;
 import it.keypartner.bpmigration.builder.ProcessToMigrateBuilder;
 import it.keypartner.bpmigration.dao.ProcessManageDAO;
@@ -35,18 +34,18 @@ public class ProcessInstanceWithVarHandler implements WorkItemHandler {
 
 		log.info("Basic -> " + basicParamSearchProcessInstance.toString());
 
-		SearchProcessInstance searchProcessInstance = new SearchProcessInstance();
-
 		ProcessManageDAO processManageDAO = new ProcessManageDAO();
 		List<ProcessInstanceLog> processFound = processManageDAO.retriveActiveProcessInstanceWithVar(
-				searchProcessInstance.getFromDeploymentId(), searchProcessInstance.getFromProcessId(),
-				searchProcessInstance.getSearchProcessVarName(), searchProcessInstance.getSearchProcessVarValue());
+				basicParamSearchProcessInstance.getFromDeploymentId(),
+				basicParamSearchProcessInstance.getFromProcessId(),
+				varParamSearchProcessInstance.getSearchProcessVarName(),
+				varParamSearchProcessInstance.getSearchProcessVarValue());
 		List<org.kie.api.runtime.manager.audit.VariableInstanceLog> variableInstanceLogs = processManageDAO
 				.getVariableInstanceLogsList();
 
 		// Invoco il builder per costruire le info da estrarre
 		List<ProcessVarToMigrate> processToMigrates = ProcessToMigrateBuilder.build(processFound, variableInstanceLogs,
-				searchProcessInstance);
+				varParamSearchProcessInstance, basicParamSearchProcessInstance);
 		log.info("Process To Migrate [" + processToMigrates.size() + "]");
 
 		Map<String, Object> results = new HashMap<String, Object>();
