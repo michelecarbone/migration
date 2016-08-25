@@ -22,7 +22,7 @@ public class ProcessInstanceWithVarHandler implements WorkItemHandler {
 
 	@Override
 	public void executeWorkItem(WorkItem workItem, WorkItemManager wkManager) {
-		log.info("Calling search ...");
+		log.info("Calling search process with var...");
 
 		SearchProcessInstance searchProcessInstance = (SearchProcessInstance) workItem.getParameter("in_search");
 		log.info("Params -> " + searchProcessInstance.toString());
