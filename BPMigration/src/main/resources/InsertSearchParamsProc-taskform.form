@@ -55,5 +55,4 @@
 <property name="outputBinding" value="searchProc/toDeploymentId"/>
 <property name="fieldClass" value="java.lang.String"/>
 </field>
-<dataHolder inputId="" name="#0000A0" type="dataModelerEntry" outId="searchProc" value="it.keypartner.bpmigration.SearchProcessInstance" id="searchProc"/>
 </form>
