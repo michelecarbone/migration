@@ -3,33 +3,37 @@
 <property name="name" value="search-instance-form.form"/>
 <property name="displayMode" value="default"/>
 <property name="status" value="0"/>
-<field position="0" name="searcInstanceProc_fromDeploymentId" type="InputText" id="361257535">
+<field position="0" name="searcInstanceProc_fromDeploymentId" type="InputText" id="1358528922">
 <property name="fieldRequired" value="false"/>
 <property name="label" value="quot;enquot;,quot;fromDeploymentId (searcInstanceProc)quot;"/>
 <property name="readonly" value="false"/>
+<property name="inputBinding" value="searchProc/fromDeploymentId"/>
 <property name="outputBinding" value="searchProc/fromDeploymentId"/>
 <property name="fieldClass" value="java.lang.String"/>
 </field>
-<field position="1" name="searcInstanceProc_fromProcessId" type="InputText" id="728315033">
+<field position="1" name="searcInstanceProc_fromProcessId" type="InputText" id="1825762772">
 <property name="fieldRequired" value="false"/>
 <property name="label" value="quot;enquot;,quot;fromProcessId (searcInstanceProc)quot;"/>
 <property name="readonly" value="false"/>
+<property name="inputBinding" value="searchProc/fromProcessId"/>
 <property name="outputBinding" value="searchProc/fromProcessId"/>
 <property name="fieldClass" value="java.lang.String"/>
 </field>
-<field position="2" name="searcInstanceProc_toDeploymentId" type="InputText" id="2101690104">
+<field position="2" name="searcInstanceProc_toDeploymentId" type="InputText" id="1794729100">
 <property name="fieldRequired" value="false"/>
 <property name="label" value="quot;enquot;,quot;toDeploymentId (searcInstanceProc)quot;"/>
 <property name="readonly" value="false"/>
+<property name="inputBinding" value="searchProc/toDeploymentId"/>
 <property name="outputBinding" value="searchProc/toDeploymentId"/>
 <property name="fieldClass" value="java.lang.String"/>
 </field>
-<field position="3" name="searcInstanceProc_toProcessId" type="InputText" id="1465739992">
+<field position="3" name="searcInstanceProc_toProcessId" type="InputText" id="496145377">
 <property name="fieldRequired" value="false"/>
 <property name="label" value="quot;enquot;,quot;toProcessId (searcInstanceProc)quot;"/>
 <property name="readonly" value="false"/>
+<property name="inputBinding" value="searchProc/toProcessId"/>
 <property name="outputBinding" value="searchProc/toProcessId"/>
 <property name="fieldClass" value="java.lang.String"/>
 </field>
-<dataHolder inputId="" name="#0000A0" type="dataModelerEntry" outId="searchProc" value="it.keypartner.bpmigration.SearchProcessInstance" id="searcInstanceProc"/>
+<dataHolder inputId="searchProc" name="#0000A0" type="dataModelerEntry" outId="searchProc" value="it.keypartner.bpmigration.SearchProcessInstance" id="searcInstanceProc"/>
 </form>
