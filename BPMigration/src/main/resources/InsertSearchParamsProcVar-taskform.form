@@ -45,6 +45,6 @@
 <property name="outputBinding" value="varParamSearch/searchProcessVarValue"/>
 <property name="fieldClass" value="java.lang.String"/>
 </field>
-<dataHolder inputId="" name="#9BCAFA" type="dataModelerEntry" outId="basicParamSearch" value="it.keypartner.bpmigration.BasicParamSearchProcessInstance" id="basicParamSearch"/>
+<dataHolder inputId="basicParamSearch" name="#0000A0" type="dataModelerEntry" outId="basicParamSearch" value="it.keypartner.bpmigration.BasicParamSearchProcessInstance" id="basicParamSearch"/>
 <dataHolder inputId="" name="#FF8881" type="dataModelerEntry" outId="varParamSearch" value="it.keypartner.bpmigration.VarParamSearchProcessInstance" id="varParamsSearch"/>
 </form>
