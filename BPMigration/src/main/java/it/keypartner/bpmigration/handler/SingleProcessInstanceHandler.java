@@ -28,7 +28,7 @@ public class SingleProcessInstanceHandler implements WorkItemHandler {
 
 		List<ProcessToMigrate> processToMigrates = new ArrayList<>();
 		BasicParamSearchProcessInstance searchProcessInstance = (BasicParamSearchProcessInstance) workItem
-				.getParameter("in_search");
+				.getParameter("in_basicParamSearch");
 		String processInstanceId = (String) workItem.getParameter("in_singleProcessInstanceId");
 
 		log.info("Params -> " + searchProcessInstance.toString() + " AND ProcessInstanceID " + processInstanceId);
