@@ -30,6 +30,12 @@
         </work-item-handler>
         <work-item-handler>
             <resolver>mvel</resolver>
+            <identifier>new it.keypartner.bpmigration.handler.SingleProcessInstanceHandler()</identifier>
+            <parameters/>
+            <name>SingleProcInstance</name>
+        </work-item-handler>
+        <work-item-handler>
+            <resolver>mvel</resolver>
             <identifier>new org.jbpm.process.workitem.bpmn2.ServiceTaskHandler(ksession, classLoader)</identifier>
             <parameters/>
             <name>Service Task</name>
