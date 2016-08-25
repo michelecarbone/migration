@@ -25,28 +25,25 @@ public class ProcessInstanceWithVarHandler implements WorkItemHandler {
 	public void executeWorkItem(WorkItem workItem, WorkItemManager wkManager) {
 		log.info("Calling search process with var...");
 
-		BasicParamSearchProcessInstance basicParamSearchProcessInstance = (BasicParamSearchProcessInstance) workItem
+		BasicParamSearchProcessInstance basicParam = (BasicParamSearchProcessInstance) workItem
 				.getParameter("in_basicParamSearch");
-		VarParamSearchProcessInstance varParamSearchProcessInstance = (VarParamSearchProcessInstance) workItem
+		VarParamSearchProcessInstance varParam = (VarParamSearchProcessInstance) workItem
 				.getParameter("in_varParamSearch");
 
-		log.info("Variabiles -> " + varParamSearchProcessInstance.toString());
-
-		log.info("Basic -> " + basicParamSearchProcessInstance.toString());
+		log.info("Variabiles -> " + varParam.toString());
+		log.info("Basic -> " + basicParam.toString());
 
 		ProcessManageDAO processManageDAO = new ProcessManageDAO();
 		List<ProcessInstanceLog> processFound = processManageDAO.retriveActiveProcessInstanceWithVar(
-				basicParamSearchProcessInstance.getFromDeploymentId(),
-				basicParamSearchProcessInstance.getFromProcessId(),
-				varParamSearchProcessInstance.getSearchProcessVarName(),
-				varParamSearchProcessInstance.getSearchProcessVarValue());
+				basicParam.getFromDeploymentId(), basicParam.getFromProcessId(), varParam.getSearchProcessVarName(),
+				varParam.getSearchProcessVarValue());
 		List<org.kie.api.runtime.manager.audit.VariableInstanceLog> variableInstanceLogs = processManageDAO
 				.getVariableInstanceLogsList();
 
 		// Invoco il builder per costruire le info da estrarre
 		List<ProcessVarToMigrate> processToMigrates = ProcessToMigrateBuilder.build(processFound, variableInstanceLogs,
-				varParamSearchProcessInstance, basicParamSearchProcessInstance);
-		log.info("Process To Migrate [" + processToMigrates.size() + "]");
+				varParam, basicParam);
+		log.info("Process With Var To Migrate [" + processToMigrates.size() + "]");
 
 		Map<String, Object> results = new HashMap<String, Object>();
 		results.put("out_processList", processToMigrates);
