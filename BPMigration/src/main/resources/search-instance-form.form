@@ -35,5 +35,5 @@
 <property name="outputBinding" value="searchProc_out/toProcessId"/>
 <property name="fieldClass" value="java.lang.String"/>
 </field>
-<dataHolder inputId="searchProc_in" name="#0000A0" type="dataModelerEntry" outId="searchProc_out" value="it.keypartner.bpmigration.SearchProcessInstance" id="searchProc"/>
+<dataHolder inputId="" name="#0000A0" type="dataModelerEntry" outId="searchProc" value="it.keypartner.bpmigration.SearchProcessInstance" id="searchProc"/>
 </form>
