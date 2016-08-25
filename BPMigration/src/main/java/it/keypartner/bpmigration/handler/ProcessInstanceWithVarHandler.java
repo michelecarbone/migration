@@ -37,22 +37,13 @@ public class ProcessInstanceWithVarHandler implements WorkItemHandler {
 		List<ProcessInstanceLog> processFound = processManageDAO.retriveActiveProcessInstanceWithVar(
 				basicParam.getFromDeploymentId(), basicParam.getFromProcessId(), varParam.getSearchProcessVarName(),
 				varParam.getSearchProcessVarValue());
-		List<org.kie.api.runtime.manager.audit.VariableInstanceLog> variableInstanceLogs = processManageDAO
-				.getVariableInstanceLogsList();
 
-		// Invoco il builder per costruire le info da estrarre
-		// List<ProcessVarToMigrate> processToMigrates =
-		// ProcessToMigrateBuilder.build(processFound, variableInstanceLogs,
-		// varParam, basicParam);
-
-		// Invoco il builder per costruire le info da estrarre
+		// Builder to convet Process intance to Process to migrate
 		List<ProcessToMigrate> processToMigrates = ProcessToMigrateBuilder.build(processFound, basicParam);
-
 		log.info("Process With Var To Migrate [" + processToMigrates.size() + "]");
 
 		Map<String, Object> results = new HashMap<String, Object>();
 		results.put("out_processList", processToMigrates);
-
 		wkManager.completeWorkItem(workItem.getId(), results);
 	}
 

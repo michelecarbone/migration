@@ -29,10 +29,10 @@ public class AllProcessInstanceHandler implements WorkItemHandler {
 		log.info("Params -> " + searchProcessInstance.toString());
 
 		ProcessManageDAO processManageDAO = new ProcessManageDAO();
-		List<ProcessInstanceLog> processFound = processManageDAO.retriveActiveProcessInstance(
+		List<ProcessInstanceLog> processFound = processManageDAO.retriveActiveProcessInstances(
 				searchProcessInstance.getFromDeploymentId(), searchProcessInstance.getFromProcessId());
 
-		// Invoco il builder per costruire le info da estrarre
+		// Builder
 		List<ProcessToMigrate> processToMigrates = ProcessToMigrateBuilder.build(processFound, searchProcessInstance);
 		log.info("Process To Migrate [" + processToMigrates.size() + "]");
 

@@ -11,13 +11,16 @@ import java.util.List;
 import java.util.Map;
 
 import org.jbpm.process.audit.ProcessInstanceLog;
-import org.kie.api.runtime.process.ProcessInstance;
 import org.kie.api.runtime.process.WorkItem;
 import org.kie.api.runtime.process.WorkItemHandler;
 import org.kie.api.runtime.process.WorkItemManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Work item handler for search active process instance
+ *
+ */
 public class SingleProcessInstanceHandler implements WorkItemHandler {
 
 	private static final Logger log = LoggerFactory.getLogger(SingleProcessInstanceHandler.class);
@@ -25,28 +28,26 @@ public class SingleProcessInstanceHandler implements WorkItemHandler {
 	@Override
 	public void executeWorkItem(WorkItem workItem, WorkItemManager wkManager) {
 		log.info("Calling single search ...");
-
 		List<ProcessToMigrate> processToMigrates = new ArrayList<>();
 		BasicParamSearchProcessInstance searchProcessInstance = (BasicParamSearchProcessInstance) workItem
 				.getParameter("in_basicParamSearch");
-		String processInstanceId = (String) workItem.getParameter("in_singleProcessInstanceId");
 
-		log.info("Params -> " + searchProcessInstance.toString() + " AND ProcessInstanceID " + processInstanceId);
+		String processInstanceId = (String) workItem.getParameter("in_singleProcessInstanceId");
+		log.info("Params [" + searchProcessInstance.toString() + "] AND ProcessInstanceID [" + processInstanceId + "]");
 
 		ProcessManageDAO processManageDAO = new ProcessManageDAO();
 		ProcessInstanceLog processFound = processManageDAO.retriveProcessInstance(
 				searchProcessInstance.getFromDeploymentId(), processInstanceId);
 		if (processFound != null) {
-			if (processFound.getStatus().compareTo(ProcessInstance.STATE_ACTIVE) == 0) {
-				List<ProcessInstanceLog> processInstanceLogs = new ArrayList<ProcessInstanceLog>();
-				processInstanceLogs.add(processFound);
-				// Invoco il builder per costruire le info da estrarre
-				processToMigrates = ProcessToMigrateBuilder.build(processInstanceLogs, searchProcessInstance);
-			}
+			List<ProcessInstanceLog> processInstanceLogs = new ArrayList<ProcessInstanceLog>();
+			processInstanceLogs.add(processFound);
+			// builder to convert processInstanceLog to DTO ProcessToMigrate
+			processToMigrates = ProcessToMigrateBuilder.build(processInstanceLogs, searchProcessInstance);
 		} else {
-			log.info("PROCESS NOT FOUND");
+			log.info("PROCESS NOT FOUND OR NON ACTIVE");
 		}
-		log.info("Single Process To Migrate [" + processToMigrates.size() + "]");
+
+		log.info("Single Process To Migrate Size N. [" + processToMigrates.size() + "]");
 		Map<String, Object> results = new HashMap<String, Object>();
 		results.put("out_processList", processToMigrates);
 

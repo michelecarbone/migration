@@ -2,8 +2,6 @@ package it.keypartner.bpmigration.builder;
 
 import it.keypartner.bpmigration.BasicParamSearchProcessInstance;
 import it.keypartner.bpmigration.ProcessToMigrate;
-import it.keypartner.bpmigration.ProcessVarToMigrate;
-import it.keypartner.bpmigration.VarParamSearchProcessInstance;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,24 +27,6 @@ public class ProcessToMigrateBuilder {
 		return listProcessToMigrate;
 	}
 
-	public static List<ProcessVarToMigrate> build(List<ProcessInstanceLog> processInstanceLogList,
-			List<org.kie.api.runtime.manager.audit.VariableInstanceLog> variableInstanceLogsList,
-			VarParamSearchProcessInstance searchProcessInstance,
-			BasicParamSearchProcessInstance basicParamSearchProcessInstance) {
-		List<ProcessVarToMigrate> listProcessToMigrate = new ArrayList<>();
-		for (ProcessInstanceLog processInstanceLog : processInstanceLogList) {
-			for (org.kie.api.runtime.manager.audit.VariableInstanceLog variableInstanceLog : variableInstanceLogsList) {
-				if (variableInstanceLog.getProcessInstanceId().compareTo(processInstanceLog.getProcessInstanceId()) == 0) {
-					log.info("Found same processId and VariabileProcessID");
-					listProcessToMigrate.add(ProcessToMigrateBuilder.build(processInstanceLog, variableInstanceLog,
-							searchProcessInstance, basicParamSearchProcessInstance));
-					break;
-				}
-			}
-		}
-		return listProcessToMigrate;
-	}
-
 	public static ProcessToMigrate build(ProcessInstanceLog processInstanceLog,
 			BasicParamSearchProcessInstance searchProcessInstance) {
 		ProcessToMigrate processToMigrate = new ProcessToMigrate(processInstanceLog.getProcessInstanceId(),
@@ -56,15 +36,4 @@ public class ProcessToMigrateBuilder {
 		return processToMigrate;
 	}
 
-	public static ProcessVarToMigrate build(ProcessInstanceLog processInstanceLog,
-			org.kie.api.runtime.manager.audit.VariableInstanceLog variableInstanceLog,
-			VarParamSearchProcessInstance varParamSearchProcessInstance,
-			BasicParamSearchProcessInstance searchProcessInstance) {
-		ProcessVarToMigrate processToMigrate = new ProcessVarToMigrate(processInstanceLog.getProcessInstanceId(),
-				searchProcessInstance.getToProcessId(), searchProcessInstance.getFromProcessId(),
-				searchProcessInstance.getFromDeploymentId(), searchProcessInstance.getToDeploymentId(),
-				processInstanceLog.getStart(), processInstanceLog.getProcessName(),
-				variableInstanceLog.getVariableId(), variableInstanceLog.getValue(), variableInstanceLog.getDate());
-		return processToMigrate;
-	}
 }
