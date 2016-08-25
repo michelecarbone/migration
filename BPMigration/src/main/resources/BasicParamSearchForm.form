@@ -35,5 +35,5 @@
 <property name="outputBinding" value="basicParamSearch/toProcessId"/>
 <property name="fieldClass" value="java.lang.String"/>
 </field>
-<dataHolder inputId="" name="#0000A0" type="dataModelerEntry" outId="basicParamSearch" value="it.keypartner.bpmigration.BasicParamSearchProcessInstance" id="basicParamSearchForm"/>
+<dataHolder inputId="" name="#0000A0" type="dataModelerEntry" outId="basicParamSearch" value="it.keypartner.bpmigration.BasicParamSearchProcessInstance" id="basicParamSearch"/>
 </form>
