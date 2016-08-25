@@ -1,7 +1,9 @@
 package it.keypartner.bpmigration.handler;
 
+import it.keypartner.bpmigration.BasicParamSearchProcessInstance;
 import it.keypartner.bpmigration.ProcessVarToMigrate;
 import it.keypartner.bpmigration.SearchProcessInstance;
+import it.keypartner.bpmigration.VarParamSearchProcessInstance;
 import it.keypartner.bpmigration.builder.ProcessToMigrateBuilder;
 import it.keypartner.bpmigration.dao.ProcessManageDAO;
 
@@ -24,8 +26,14 @@ public class ProcessInstanceWithVarHandler implements WorkItemHandler {
 	public void executeWorkItem(WorkItem workItem, WorkItemManager wkManager) {
 		log.info("Calling search process with var...");
 
-		SearchProcessInstance searchProcessInstance = (SearchProcessInstance) workItem.getParameter("in_search");
-		log.info("Params -> " + searchProcessInstance.toString());
+		BasicParamSearchProcessInstance basicParamSearchProcessInstance = (BasicParamSearchProcessInstance) workItem
+				.getParameter("in_basicParamSearch");
+		VarParamSearchProcessInstance varParamSearchProcessInstance = (VarParamSearchProcessInstance) workItem
+				.getParameter("in_varParamSearch");
+		log.info("Basic -> " + basicParamSearchProcessInstance.toString());
+		log.info("Variabiles -> " + varParamSearchProcessInstance.toString());
+
+		SearchProcessInstance searchProcessInstance = new SearchProcessInstance();
 
 		ProcessManageDAO processManageDAO = new ProcessManageDAO();
 		List<ProcessInstanceLog> processFound = processManageDAO.retriveActiveProcessInstanceWithVar(
