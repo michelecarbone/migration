@@ -1,7 +1,7 @@
 package it.keypartner.bpmigration.handler;
 
 import it.keypartner.bpmigration.BasicParamSearchProcessInstance;
-import it.keypartner.bpmigration.ProcessVarToMigrate;
+import it.keypartner.bpmigration.ProcessToMigrate;
 import it.keypartner.bpmigration.VarParamSearchProcessInstance;
 import it.keypartner.bpmigration.builder.ProcessToMigrateBuilder;
 import it.keypartner.bpmigration.dao.ProcessManageDAO;
@@ -41,8 +41,13 @@ public class ProcessInstanceWithVarHandler implements WorkItemHandler {
 				.getVariableInstanceLogsList();
 
 		// Invoco il builder per costruire le info da estrarre
-		List<ProcessVarToMigrate> processToMigrates = ProcessToMigrateBuilder.build(processFound, variableInstanceLogs,
-				varParam, basicParam);
+		// List<ProcessVarToMigrate> processToMigrates =
+		// ProcessToMigrateBuilder.build(processFound, variableInstanceLogs,
+		// varParam, basicParam);
+
+		// Invoco il builder per costruire le info da estrarre
+		List<ProcessToMigrate> processToMigrates = ProcessToMigrateBuilder.build(processFound, basicParam);
+
 		log.info("Process With Var To Migrate [" + processToMigrates.size() + "]");
 
 		Map<String, Object> results = new HashMap<String, Object>();
