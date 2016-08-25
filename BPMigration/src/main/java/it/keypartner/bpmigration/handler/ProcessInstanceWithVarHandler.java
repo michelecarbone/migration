@@ -30,8 +30,10 @@ public class ProcessInstanceWithVarHandler implements WorkItemHandler {
 				.getParameter("in_basicParamSearch");
 		VarParamSearchProcessInstance varParamSearchProcessInstance = (VarParamSearchProcessInstance) workItem
 				.getParameter("in_varParamSearch");
-		log.info("Basic -> " + basicParamSearchProcessInstance.toString());
+
 		log.info("Variabiles -> " + varParamSearchProcessInstance.toString());
+
+		log.info("Basic -> " + basicParamSearchProcessInstance.toString());
 
 		SearchProcessInstance searchProcessInstance = new SearchProcessInstance();
 
