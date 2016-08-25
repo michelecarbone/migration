@@ -69,6 +69,7 @@ public class ProcessManageDAO {
 			JPAAuditLogService auditService = getJPAAuditLogService(deploymentID);
 			List<ProcessInstanceLog> foundInstanceLogList = auditService.findActiveProcessInstances(processId);
 			if (foundInstanceLogList != null) {
+				log.info("Found N. " + foundInstanceLogList.size() + " to filter...");
 				for (ProcessInstanceLog instanceLog : foundInstanceLogList) {
 					if (isWithGAV(instanceLog, deploymentID)) {
 						// Add only process instance with deploymentID
@@ -96,30 +97,34 @@ public class ProcessManageDAO {
 			JPAAuditLogService auditService = getJPAAuditLogService(deploymentID);
 			List<ProcessInstanceLog> foundInstanceLogListActiveProc = auditService
 					.findActiveProcessInstances(processID);
-			for (ProcessInstanceLog processInstanceLog : foundInstanceLogListActiveProc) {
-				if (isWithGAV(processInstanceLog, deploymentID)) {
-					Long procInstanceId = processInstanceLog.getProcessInstanceId();
-					// ParametrizedQuery to search most recent varibiles
-					ParametrizedQuery<org.kie.api.runtime.manager.audit.VariableInstanceLog> varQuery = auditService
-							.variableInstanceLogQuery().last().intersect().processInstanceId(procInstanceId).build();
-					List<org.kie.api.runtime.manager.audit.VariableInstanceLog> varLogsList = new ArrayList<>();
-					try {
-						varLogsList = varQuery.getResultList();
-						for (org.kie.api.runtime.manager.audit.VariableInstanceLog infoLastVar : varLogsList) {
-							if (infoLastVar.getVariableId() != null
-									&& infoLastVar.getVariableId().compareTo(varName) == 0) {
-								log.info("Found var name [" + varName + "] for Process Instance ID [" + procInstanceId
-										+ "] With Value [" + varValue + "]");
-								if (varValue.equals(infoLastVar.getValue())) {
-									instanceLogList.add(processInstanceLog);
-									log.info("MATCH OK ");
-									break;
+			if (foundInstanceLogListActiveProc != null) {
+				log.info("Found N. " + foundInstanceLogListActiveProc.size() + " to filter...");
+				for (ProcessInstanceLog processInstanceLog : foundInstanceLogListActiveProc) {
+					if (isWithGAV(processInstanceLog, deploymentID)) {
+						Long procInstanceId = processInstanceLog.getProcessInstanceId();
+						// ParametrizedQuery to search most recent varibiles
+						ParametrizedQuery<org.kie.api.runtime.manager.audit.VariableInstanceLog> varQuery = auditService
+								.variableInstanceLogQuery().last().intersect().processInstanceId(procInstanceId)
+								.build();
+						List<org.kie.api.runtime.manager.audit.VariableInstanceLog> varLogsList = new ArrayList<>();
+						try {
+							varLogsList = varQuery.getResultList();
+							for (org.kie.api.runtime.manager.audit.VariableInstanceLog infoLastVar : varLogsList) {
+								if (infoLastVar.getVariableId() != null
+										&& infoLastVar.getVariableId().compareTo(varName) == 0) {
+									log.info("Found var name [" + varName + "] for Process Instance ID ["
+											+ procInstanceId + "] With Value [" + varValue + "]");
+									if (varValue.equals(infoLastVar.getValue())) {
+										instanceLogList.add(processInstanceLog);
+										log.info("MATCH OK ");
+										break;
+									}
 								}
 							}
+						} catch (Exception exception) {
+							log.error("EXCEPTION IN FIND VariableInstanceLog FOR Process Instance ID ["
+									+ procInstanceId + "] Of Process [" + processID + "]", exception);
 						}
-					} catch (Exception exception) {
-						log.error("EXCEPTION IN FIND VariableInstanceLog FOR Process Instance ID [" + procInstanceId
-								+ "] Of Process [" + processID + "]", exception);
 					}
 				}
 			}
