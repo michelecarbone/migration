@@ -71,7 +71,8 @@ import org.drools.core.process.core.datatype.impl.type.ObjectDataType;
   [
     "name" : "SearchInstanceWithVar",
     "parameters" : [
-      "in_search" : new ObjectDataType()
+      "in_basicParamSearch" : new ObjectDataType(),
+       "in_varParamSearch" : new ObjectDataType()
     ],
     "results" : [
         "out_processList" : new ObjectDataType(),

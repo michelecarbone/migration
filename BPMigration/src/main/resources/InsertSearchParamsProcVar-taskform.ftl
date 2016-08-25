@@ -48,13 +48,22 @@
 	function taskFormValidator() {
 		var i=0;
 		var myInputs = new Array();
-					myInputs[i] = document.getElementById("searchProc");
+					myInputs[i] = document.getElementById("basicParamSearch");
+					i++;
+					myInputs[i] = document.getElementById("varParamSearch");
 					i++;
 
 
 		var j=0;
 						if(notEmpty(myInputs[j]) && !isAlphanumeric(myInputs[j])) {
-							alert("Please enter valid searchProc");
+							alert("Please enter valid basicParamSearch");
+							myInputs[j].focus();
+							return false;
+						}
+			
+					j++;
+						if(notEmpty(myInputs[j]) && !isAlphanumeric(myInputs[j])) {
+							alert("Please enter valid varParamSearch");
 							myInputs[j].focus();
 							return false;
 						}
@@ -219,6 +228,7 @@
             <legend>Task Info</legend>
             	<label for="name">Owners</label>
             	<div class="div_checkbox">
+											bpmsAdmin
             	
             	</div>
             	<label for="name">Actor ID</label>
@@ -241,9 +251,14 @@
 
           <fieldset>
             <legend>Task Outputs</legend>
-                            		<label for="name">searchProc</label>
+                            		<label for="name">basicParamSearch</label>
                             		<div class="div_texbox">
-                              		<input name="searchProc" type="text" class="textbox" id="searchProc" value="${searchProc}" />
+                              		<input name="basicParamSearch" type="text" class="textbox" id="basicParamSearch" value="${basicParamSearch}" />
+                            		</div>
+              	
+                            		<label for="name">varParamSearch</label>
+                            		<div class="div_texbox">
+                              		<input name="varParamSearch" type="text" class="textbox" id="varParamSearch" value="${varParamSearch}" />
                             		</div>
               	
 
