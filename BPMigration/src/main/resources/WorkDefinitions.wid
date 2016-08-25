@@ -81,6 +81,18 @@ import org.drools.core.process.core.datatype.impl.type.ObjectDataType;
     "icon" : "defaultservicenodeicon.png"
   ],
     [
+    "name" : "SingleProcInstance",
+    "parameters" : [
+      "in_basicParamSearch" : new ObjectDataType(),
+       "in_procInstanceId" : new ObjectDataType()
+    ],
+    "results" : [
+        "out_processList" : new ObjectDataType(),
+    ],
+    "displayName" : "SingleProcInstance",
+    "icon" : "defaultservicenodeicon.png"
+  ],
+    [
     "name" : "PerformMigration",
     "parameters" : [
       "in_processToMigrateList" : new ObjectDataType()
