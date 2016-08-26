@@ -48,15 +48,15 @@
         </work-item-handler>
         <work-item-handler>
             <resolver>mvel</resolver>
-            <identifier>new it.keypartner.bpmigration.handler.ProcessInstanceWithVarHandler()</identifier>
+            <identifier>new it.keypartner.bpmigration.handler.ValidateParmsHandler()</identifier>
             <parameters/>
-            <name>SearchInstanceWithVar</name>
+            <name>ValidateParms</name>
         </work-item-handler>
         <work-item-handler>
             <resolver>mvel</resolver>
-            <identifier>new it.keypartner.bpmigration.handler.ValidateParmsHandler()</identifier>
+            <identifier>new it.keypartner.bpmigration.handler.ProcessInstanceWithVarHandler()</identifier>
             <parameters/>
-            <name>ValidateParams</name>
+            <name>SearchInstanceWithVar</name>
         </work-item-handler>
         <work-item-handler>
             <resolver>mvel</resolver>
