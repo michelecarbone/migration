@@ -88,6 +88,14 @@ public class ProcessManageDAO {
 		return instanceLogList;
 	}
 
+	/**
+	 * 
+	 * @param deploymentID
+	 * @param processID
+	 * @param varName
+	 * @param varValue
+	 * @return
+	 */
 	public List<ProcessInstanceLog> retriveActiveProcessInstanceWithVar(String deploymentID, String processID,
 			String varName, Object varValue) {
 		log.info("RetriveActiveProcessInstanceWithVar for PROC-ID [" + processID + "] DEP-ID [" + deploymentID
@@ -137,6 +145,45 @@ public class ProcessManageDAO {
 				+ "] and Value [" + varValue + "]");
 		printProcInstanceLog(instanceLogList);
 		return instanceLogList;
+	}
+
+	/**
+	 * Check validate of params
+	 * 
+	 * @param fromDeploymentID
+	 * @param fromProcessId
+	 * @param toDeploymentID
+	 * @param toProcessId
+	 * @return String empity is OK VALID else String NOT Empity is NOT VALID
+	 */
+	public String validateParams(String fromDeploymentID, String fromProcessId, String toDeploymentID,
+			String toProcessId) {
+		StringBuilder stringBuilder = new StringBuilder();
+		try {
+			// Check to
+			if (!RuntimeManagerRegistry.get().isRegistered(toDeploymentID)) {
+				stringBuilder.append("No deployment Id found for [" + toDeploymentID + "]\n");
+				return stringBuilder.toString();
+			}
+			InternalRuntimeManager managerTo = (InternalRuntimeManager) RuntimeManagerRegistry.get().getManager(
+					toDeploymentID);
+			if (managerTo.getEnvironment().getKieBase().getProcess(toProcessId) == null) {
+				stringBuilder.append("No process definition found for id [" + toProcessId + "]\n");
+			}
+			// Check from
+			if (!RuntimeManagerRegistry.get().isRegistered(fromDeploymentID)) {
+				stringBuilder.append("No deployment Id found for [" + fromDeploymentID + "]\n");
+				return stringBuilder.toString();
+			}
+			InternalRuntimeManager managerFrom = (InternalRuntimeManager) RuntimeManagerRegistry.get().getManager(
+					fromDeploymentID);
+			if (managerFrom.getEnvironment().getKieBase().getProcess(fromProcessId) == null) {
+				stringBuilder.append("No process definition found for id [" + fromProcessId + "]\n");
+			}
+		} catch (Exception e) {
+			log.error("EXCEPTION IN VALIDATION OF PARAMS ", e);
+		}
+		return stringBuilder.toString();
 	}
 
 	/**
