@@ -1,0 +1,14 @@
+
+<form id="1842676695">
+<property name="name" value="ToContinueSearch-taskform.form"/>
+<property name="displayMode" value="default"/>
+<property name="status" value="0"/>
+<field position="0" name="toContinue" type="CheckBox" id="1283191530">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;out_toContinue (toContinue)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="out_toContinue"/>
+<property name="fieldClass" value="java.lang.Boolean"/>
+</field>
+<dataHolder inputId="" name="#000000" type="basicType" outId="out_toContinue" value="java.lang.Boolean" id="toContinue"/>
+</form>
