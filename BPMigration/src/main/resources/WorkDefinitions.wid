@@ -92,6 +92,17 @@ import org.drools.core.process.core.datatype.impl.type.ObjectDataType;
     "displayName" : "SingleProcInstance",
     "icon" : "defaultservicenodeicon.png"
   ],
+      [
+    "name" : "ValidateParms",
+    "parameters" : [
+      "in_validParamSearch" : new ObjectDataType()
+    ],
+    "results" : [
+        "out_validMsg" : new ObjectDataType(),
+    ],
+    "displayName" : "ValidateParms",
+    "icon" : "defaultservicenodeicon.png"
+  ],
     [
     "name" : "PerformMigration",
     "parameters" : [
