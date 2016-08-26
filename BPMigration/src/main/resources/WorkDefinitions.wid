@@ -98,7 +98,7 @@ import org.drools.core.process.core.datatype.impl.type.ObjectDataType;
       "in_validParamSearch" : new ObjectDataType()
     ],
     "results" : [
-        "out_validMsg" :  new StringDataType()
+        "out_validMsg" :  new ObjectDataType()
     ],
     "displayName" : "ValidateParms",
     "icon" : "defaultservicenodeicon.png"
