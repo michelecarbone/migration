@@ -3,12 +3,46 @@
 <property name="name" value="ToContinueSearch-taskform.form"/>
 <property name="displayMode" value="default"/>
 <property name="status" value="0"/>
-<field position="0" name="toContinue" type="CheckBox" id="1283191530">
+<field position="1" name="toContinue" type="CheckBox" id="1283191530">
 <property name="fieldRequired" value="false"/>
-<property name="label" value="quot;enquot;,quot;out_toContinue (toContinue)quot;"/>
+<property name="groupWithPrevious" value="false"/>
+<property name="label" value="quot;SSClassquot;,quot;quot;quot;SSStylequot;,quot;quot;quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;make new searchquot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
+<property name="errorMessage" value="quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;quot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
+<property name="title" value="quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;quot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
 <property name="readonly" value="false"/>
 <property name="outputBinding" value="out_toContinue"/>
 <property name="fieldClass" value="java.lang.Boolean"/>
+</field>
+<field position="0" name=":decorator_0" type="HTMLLabel" id="220290774">
+<property name="fieldRequired" value="false"/>
+<property name="groupWithPrevious" value="false"/>
+<property name="readonly" value="false"/>
+<property name="htmlContent" value="quot;caquot;,quot;&lt;h2&gt;The search did not produce any results.&lt;/h2&gt;
+
+&lt;h2&gt;Do you want to make another search?&lt;/h2&gt;
+quot;quot;dequot;,quot;&lt;h2&gt;The search did not produce any results.&lt;/h2&gt;
+
+&lt;h2&gt;Do you want to make another search?&lt;/h2&gt;
+quot;quot;enquot;,quot;&lt;h2&gt;The search did not produce any results.&lt;/h2&gt;
+
+&lt;h2&gt;Do you want to make another search?&lt;/h2&gt;
+quot;quot;esquot;,quot;&lt;h2&gt;The search did not produce any results.&lt;/h2&gt;
+
+&lt;h2&gt;Do you want to make another search?&lt;/h2&gt;
+quot;quot;frquot;,quot;&lt;h2&gt;The search did not produce any results.&lt;/h2&gt;
+
+&lt;h2&gt;Do you want to make another search?&lt;/h2&gt;
+quot;quot;jaquot;,quot;&lt;h2&gt;The search did not produce any results.&lt;/h2&gt;
+
+&lt;h2&gt;Do you want to make another search?&lt;/h2&gt;
+quot;quot;ptquot;,quot;&lt;h2&gt;The search did not produce any results.&lt;/h2&gt;
+
+&lt;h2&gt;Do you want to make another search?&lt;/h2&gt;
+quot;quot;zhquot;,quot;&lt;h2&gt;The search did not produce any results.&lt;/h2&gt;
+
+&lt;h2&gt;Do you want to make another search?&lt;/h2&gt;
+quot;"/>
+<property name="fieldClass" value="HTMLlabel"/>
 </field>
 <dataHolder inputId="" name="#000000" type="basicType" outId="out_toContinue" value="java.lang.Boolean" id="toContinue"/>
 </form>
