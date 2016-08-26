@@ -32,6 +32,7 @@ public class ValidateParmsHandler implements WorkItemHandler {
 		String valid = processManageDAO.validateParams(searchProcessInstance.getFromDeploymentId(),
 				searchProcessInstance.getFromProcessId(), searchProcessInstance.getToDeploymentId(),
 				searchProcessInstance.getToProcessId());
+		log.info("Valid ? [" + valid + "]");
 		if (valid == null) {
 			valid = "";
 		}
