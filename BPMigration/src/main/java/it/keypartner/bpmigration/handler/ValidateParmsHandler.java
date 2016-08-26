@@ -39,7 +39,7 @@ public class ValidateParmsHandler implements WorkItemHandler {
 
 		log.info("Result of Validation [" + valid + "]");
 		Map<String, Object> results = new HashMap<String, Object>();
-		results.put("out_validMsg", valid);
+		results.put("out_validMsg", "CIAOOOOOOOOO");
 		wkManager.completeWorkItem(workItem.getId(), results);
 	}
 
