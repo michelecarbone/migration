@@ -7,7 +7,7 @@
   <version>2.0.0</version>
   <packaging>kjar</packaging>
   <name>DemoProcess</name>
-  <description>Demo Business Process Project Key Partner</description>
+  <description>Demo Business Process Project</description>
   <repositories>
     <repository>
       <id>guvnor-m2-repo</id>
