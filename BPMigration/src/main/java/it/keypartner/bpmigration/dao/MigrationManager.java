@@ -75,6 +75,7 @@ public class MigrationManager {
 
 	public static String migrate(ProcessToMigrate processData) {
 		StringBuffer outcomeBuffer = new StringBuffer();
+		Long strat = System.currentTimeMillis();
 		try {
 			InternalRuntimeManager currentManager = (InternalRuntimeManager) RuntimeManagerRegistry.get().getManager(
 					processData.getFromDeploymentId());
@@ -204,7 +205,8 @@ public class MigrationManager {
 					+ ") failed due to " + e.getMessage());
 			logger.error("Migration of process instance ({}) failed", processData.getProcessInstanceId(), e);
 		}
-
+		Long elapsedTime = (System.currentTimeMillis() - strat);
+		outcomeBuffer.append(" Elapsed time [" + elapsedTime + " ms]");
 		return outcomeBuffer.toString();
 	}
 

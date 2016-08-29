@@ -23,12 +23,16 @@ public class PerformMigrationHandler implements WorkItemHandler {
 		List<ProcessToMigrate> processToMigrateList = (List<ProcessToMigrate>) workItem
 				.getParameter("in_processToMigrateList");
 		StringBuilder stringBuilder = new StringBuilder();
+		Long strat = System.currentTimeMillis();
 		for (ProcessToMigrate processToMigrate : processToMigrateList) {
 			log.info("Start Migration for -> " + processToMigrate);
 			String outcome = MigrationManager.migrate(processToMigrate);
 			log.info("End Migration for -> " + processToMigrate);
 			stringBuilder.append(outcome + "\n");
 		}
+		Long elapsedTime = (System.currentTimeMillis() - strat);
+		stringBuilder.append("Total elapsed time of migration [" + elapsedTime + " ms]");
+
 		Map<String, Object> results = new HashMap<String, Object>();
 		log.info(stringBuilder.toString());
 
