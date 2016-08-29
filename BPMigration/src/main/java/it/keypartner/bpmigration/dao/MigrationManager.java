@@ -7,7 +7,6 @@ import java.util.Map;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.Query;
 
 import org.drools.core.command.impl.CommandBasedStatefulKnowledgeSession;
 import org.drools.core.command.impl.KnowledgeCommandContext;
@@ -161,92 +160,116 @@ public class MigrationManager {
 
 			EntityManagerFactory emf = EntityManagerFactoryManager.get().getOrCreate(auditPu);
 			EntityManager em = emf.createEntityManager();
-			// update variable instance log information with new deployment id
-			// and process id
-			Query varLogQuery = em
-					.createQuery("update VariableInstanceLog set externalId = :depId, processId = :procId where processInstanceId = :procInstanceId");
-			varLogQuery.setParameter("depId", processData.getToDeploymentId())
-					.setParameter("procId", processData.getToProcessId())
-					.setParameter("procInstanceId", processData.getProcessInstanceId());
-
-			int varsUpdated = varLogQuery.executeUpdate();
-			logger.info("Variable instances updated = {} for process instance id {}", varsUpdated,
-					processData.getProcessInstanceId());
-
-			// update node instance log information with new deployment id and
-			// process id
-			Query nodeLogQuery = em
-					.createQuery("update NodeInstanceLog set externalId = :depId, processId = :procId where processInstanceId = :procInstanceId");
-			nodeLogQuery.setParameter("depId", processData.getToDeploymentId())
-					.setParameter("procId", processData.getToProcessId())
-					.setParameter("procInstanceId", processData.getProcessInstanceId());
-
-			int nodesUpdated = nodeLogQuery.executeUpdate();
-			logger.info("Node instances updated = {} for process instance id {}", nodesUpdated,
-					processData.getProcessInstanceId());
-
-			// update process instance log with new deployment and process id
-			Query pInstanceLogQuery = em
-					.createQuery("update ProcessInstanceLog set externalId = :depId, processId = :procId, processVersion= :procVersion where processInstanceId = :procInstanceId");
-			pInstanceLogQuery.setParameter("depId", processData.getToDeploymentId())
-					.setParameter("procId", processData.getToProcessId())
-					.setParameter("procVersion", toBeProcess.getVersion())
-					.setParameter("procInstanceId", processData.getProcessInstanceId());
-
-			int pInstancesUpdated = pInstanceLogQuery.executeUpdate();
-			logger.info("Process instances updated = {} for process instance id {}", pInstancesUpdated,
-					processData.getProcessInstanceId());
-
-			try {
-				// update task audit instance log with new deployment and
-				// process id
-				Query taskVarLogQuery = em
-						.createQuery("update TaskVariableImpl set processId = :procId where processInstanceId = :procInstanceId");
-				taskVarLogQuery.setParameter("procId", processData.getToProcessId()).setParameter("procInstanceId",
-						processData.getProcessInstanceId());
-
-				int taskVarUpdated = taskVarLogQuery.executeUpdate();
-				logger.info("Task variables updated = {} for process instance id {}", taskVarUpdated,
-						processData.getProcessInstanceId());
-			} catch (Throwable e) {
-				logger.warn("Cannot update task variables (added in version 6.3) due to {}", e.getMessage());
-			}
-
-			// update task audit instance log with new deployment and process id
-			Query auditTaskLogQuery = em
-					.createQuery("update AuditTaskImpl set deploymentId = :depId, processId = :procId where processInstanceId = :procInstanceId");
-			auditTaskLogQuery.setParameter("depId", processData.getToDeploymentId())
-					.setParameter("procId", processData.getToProcessId())
-					.setParameter("procInstanceId", processData.getProcessInstanceId());
-
-			int auditTaskUpdated = auditTaskLogQuery.executeUpdate();
-			logger.info("Task audit updated = {} for process instance id {}", auditTaskUpdated,
-					processData.getProcessInstanceId());
-
-			// update task instance log with new deployment and process id
-			Query taskLogQuery = em
-					.createQuery("update TaskImpl set deploymentId = :depId, processId = :procId where processInstanceId = :procInstanceId");
-			taskLogQuery.setParameter("depId", processData.getToDeploymentId())
-					.setParameter("procId", processData.getToProcessId())
-					.setParameter("procInstanceId", processData.getProcessInstanceId());
-
-			int taskUpdated = taskLogQuery.executeUpdate();
-			logger.info("Tasks updated = {} for process instance id {}", taskUpdated,
-					processData.getProcessInstanceId());
-
-			try {
-				// update context mapping info with new deployment
-				Query contextInfoQuery = em
-						.createQuery("update ContextMappingInfo set ownerId = :depId where contextId = :procInstanceId");
-				contextInfoQuery.setParameter("depId", processData.getToDeploymentId()).setParameter("procInstanceId",
-						"" + processData.getProcessInstanceId());
-
-				int contextInfoUpdated = contextInfoQuery.executeUpdate();
-				logger.info("Context info updated = {} for process instance id {}", contextInfoUpdated,
-						processData.getProcessInstanceId());
-			} catch (Throwable e) {
-				logger.warn("Cannot update context mapping owner (added in version 6.2) due to {}", e.getMessage());
-			}
+			// // update variable instance log information with new deployment
+			// id
+			// // and process id
+			// Query varLogQuery = em
+			// .createQuery("update VariableInstanceLog set externalId = :depId, processId = :procId where processInstanceId = :procInstanceId");
+			// varLogQuery.setParameter("depId",
+			// processData.getToDeploymentId())
+			// .setParameter("procId", processData.getToProcessId())
+			// .setParameter("procInstanceId",
+			// processData.getProcessInstanceId());
+			//
+			// int varsUpdated = varLogQuery.executeUpdate();
+			// logger.info("Variable instances updated = {} for process instance id {}",
+			// varsUpdated,
+			// processData.getProcessInstanceId());
+			//
+			// // update node instance log information with new deployment id
+			// and
+			// // process id
+			// Query nodeLogQuery = em
+			// .createQuery("update NodeInstanceLog set externalId = :depId, processId = :procId where processInstanceId = :procInstanceId");
+			// nodeLogQuery.setParameter("depId",
+			// processData.getToDeploymentId())
+			// .setParameter("procId", processData.getToProcessId())
+			// .setParameter("procInstanceId",
+			// processData.getProcessInstanceId());
+			//
+			// int nodesUpdated = nodeLogQuery.executeUpdate();
+			// logger.info("Node instances updated = {} for process instance id {}",
+			// nodesUpdated,
+			// processData.getProcessInstanceId());
+			//
+			// // update process instance log with new deployment and process id
+			// Query pInstanceLogQuery = em
+			// .createQuery("update ProcessInstanceLog set externalId = :depId, processId = :procId, processVersion= :procVersion where processInstanceId = :procInstanceId");
+			// pInstanceLogQuery.setParameter("depId",
+			// processData.getToDeploymentId())
+			// .setParameter("procId", processData.getToProcessId())
+			// .setParameter("procVersion", toBeProcess.getVersion())
+			// .setParameter("procInstanceId",
+			// processData.getProcessInstanceId());
+			//
+			// int pInstancesUpdated = pInstanceLogQuery.executeUpdate();
+			// logger.info("Process instances updated = {} for process instance id {}",
+			// pInstancesUpdated,
+			// processData.getProcessInstanceId());
+			//
+			// try {
+			// // update task audit instance log with new deployment and
+			// // process id
+			// Query taskVarLogQuery = em
+			// .createQuery("update TaskVariableImpl set processId = :procId where processInstanceId = :procInstanceId");
+			// taskVarLogQuery.setParameter("procId",
+			// processData.getToProcessId()).setParameter("procInstanceId",
+			// processData.getProcessInstanceId());
+			//
+			// int taskVarUpdated = taskVarLogQuery.executeUpdate();
+			// logger.info("Task variables updated = {} for process instance id {}",
+			// taskVarUpdated,
+			// processData.getProcessInstanceId());
+			// } catch (Throwable e) {
+			// logger.warn("Cannot update task variables (added in version 6.3) due to {}",
+			// e.getMessage());
+			// }
+			//
+			// // update task audit instance log with new deployment and process
+			// id
+			// Query auditTaskLogQuery = em
+			// .createQuery("update AuditTaskImpl set deploymentId = :depId, processId = :procId where processInstanceId = :procInstanceId");
+			// auditTaskLogQuery.setParameter("depId",
+			// processData.getToDeploymentId())
+			// .setParameter("procId", processData.getToProcessId())
+			// .setParameter("procInstanceId",
+			// processData.getProcessInstanceId());
+			//
+			// int auditTaskUpdated = auditTaskLogQuery.executeUpdate();
+			// logger.info("Task audit updated = {} for process instance id {}",
+			// auditTaskUpdated,
+			// processData.getProcessInstanceId());
+			//
+			// // update task instance log with new deployment and process id
+			// Query taskLogQuery = em
+			// .createQuery("update TaskImpl set deploymentId = :depId, processId = :procId where processInstanceId = :procInstanceId");
+			// taskLogQuery.setParameter("depId",
+			// processData.getToDeploymentId())
+			// .setParameter("procId", processData.getToProcessId())
+			// .setParameter("procInstanceId",
+			// processData.getProcessInstanceId());
+			//
+			// int taskUpdated = taskLogQuery.executeUpdate();
+			// logger.info("Tasks updated = {} for process instance id {}",
+			// taskUpdated,
+			// processData.getProcessInstanceId());
+			//
+			// try {
+			// // update context mapping info with new deployment
+			// Query contextInfoQuery = em
+			// .createQuery("update ContextMappingInfo set ownerId = :depId where contextId = :procInstanceId");
+			// contextInfoQuery.setParameter("depId",
+			// processData.getToDeploymentId()).setParameter("procInstanceId",
+			// "" + processData.getProcessInstanceId());
+			//
+			// int contextInfoUpdated = contextInfoQuery.executeUpdate();
+			// logger.info("Context info updated = {} for process instance id {}",
+			// contextInfoUpdated,
+			// processData.getProcessInstanceId());
+			// } catch (Throwable e) {
+			// logger.warn("Cannot update context mapping owner (added in version 6.2) due to {}",
+			// e.getMessage());
+			// }
 
 			KieSession current = JPAKnowledgeService.newStatefulKnowledgeSession(currentManager.getEnvironment()
 					.getKieBase(), null, currentManager.getEnvironment().getEnvironment());
