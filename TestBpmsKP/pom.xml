@@ -3,11 +3,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>it.keypartner</groupId>
-  <artifactId>TestBpmsKP</artifactId>
-  <version>1.0.9</version>
+  <artifactId>DemoProcess</artifactId>
+  <version>2.0.0</version>
   <packaging>kjar</packaging>
-  <name>TestBpmsKP</name>
-  <description>Demo Project Key Partner</description>
+  <name>DemoProcess</name>
+  <description>Demo Business Process Project Key Partner</description>
   <repositories>
     <repository>
       <id>guvnor-m2-repo</id>

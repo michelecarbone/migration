@@ -208,7 +208,7 @@
             <legend>Task Info</legend>
             	<label for="name">Owners</label>
             	<div class="div_checkbox">
-											bpmsAdmin
+											${initiator}
             	
             	</div>
             	<label for="name">Actor ID</label>
@@ -228,11 +228,9 @@
             <legend>Task Inputs</legend>
                             		<label for="name">in_name</label>
                             		<div class="div_checkbox">
-                              		${in_name}
                             		</div>
                             		<label for="name">in_surname</label>
                             		<div class="div_checkbox">
-                              		${in_surname}
                             		</div>
                             		<label for="name">in_age</label>
                             		<div class="div_checkbox">

@@ -56,6 +56,8 @@
 					i++;
 					myInputs[i] = document.getElementById("status");
 					i++;
+					myInputs[i] = document.getElementById("initiator");
+					i++;
 
 
 		var j=0;
@@ -79,6 +81,12 @@
 					j++;
 						if(notEmpty(myInputs[j]) && !isAlphanumeric(myInputs[j])) {
 							alert("Please enter valid status");
+							myInputs[j].focus();
+							return false;
+						}
+					j++;
+						if(notEmpty(myInputs[j]) && !isAlphanumeric(myInputs[j])) {
+							alert("Please enter valid initiator");
 							myInputs[j].focus();
 							return false;
 						}
@@ -258,6 +266,11 @@
                             		<label for="name">status</label>
                             		<div class="div_texbox">
                               		<input name="status" type="text" class="textbox" id="status" value="" />
+                            		</div>
+              	
+                            		<label for="name">initiator</label>
+                            		<div class="div_texbox">
+                              		<input name="initiator" type="text" class="textbox" id="initiator" value="" />
                             		</div>
               	
 
