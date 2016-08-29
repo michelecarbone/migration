@@ -3,39 +3,26 @@
 <property name="name" value="DemoProcess-taskform.form"/>
 <property name="displayMode" value="default"/>
 <property name="status" value="0"/>
-<field position="3" name="lastName" type="InputText" id="940942465">
+<field position="2" name="age" type="InputTextInteger" id="1826186026">
 <property name="fieldRequired" value="false"/>
-<property name="label" value="quot;enquot;,quot;lastName (lastName)quot;"/>
-<property name="readonly" value="false"/>
-<property name="outputBinding" value="lastName"/>
-<property name="fieldClass" value="java.lang.String"/>
-</field>
-<field position="0" name="age" type="InputTextInteger" id="1826186026">
-<property name="fieldRequired" value="false"/>
+<property name="groupWithPrevious" value="false"/>
 <property name="label" value="quot;enquot;,quot;age (age)quot;"/>
 <property name="readonly" value="false"/>
 <property name="outputBinding" value="age"/>
 <property name="fieldClass" value="java.lang.Integer"/>
 </field>
-<field position="2" name="initiator" type="InputText" id="1184907340">
-<property name="fieldRequired" value="false"/>
-<property name="label" value="quot;enquot;,quot;initiator (initiator)quot;"/>
-<property name="readonly" value="false"/>
-<property name="outputBinding" value="initiator"/>
-<property name="fieldClass" value="java.lang.String"/>
-</field>
-<field position="4" name="status" type="InputText" id="666944888">
-<property name="fieldRequired" value="false"/>
-<property name="label" value="quot;enquot;,quot;status (status)quot;"/>
-<property name="readonly" value="false"/>
-<property name="outputBinding" value="status"/>
-<property name="fieldClass" value="java.lang.String"/>
-</field>
-<field position="1" name="firstName" type="InputText" id="1299363834">
+<field position="0" name="firstName" type="InputText" id="1299363834">
 <property name="fieldRequired" value="false"/>
 <property name="label" value="quot;enquot;,quot;firstName (firstName)quot;"/>
 <property name="readonly" value="false"/>
 <property name="outputBinding" value="firstName"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<field position="1" name="lastName" type="InputText" id="940942465">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;lastName (lastName)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="lastName"/>
 <property name="fieldClass" value="java.lang.String"/>
 </field>
 <dataHolder inputId="" name="#FF54A7" type="basicType" outId="age" value="java.lang.Integer" id="age"/>
